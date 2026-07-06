@@ -19,10 +19,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <div id="scroll-progress"></div>
     <!-- Particle canvas background -->
     <canvas id="particles"></canvas>
 
@@ -57,10 +59,17 @@
                     <span class="pulse-dot"></span> Open to Opportunities
                 </div>
                 
-                <div class="profile-frame anim-reveal">
-                    <div class="profile-glow"></div>
-                    <img src="profile.jpg" alt="Deval Sonani" class="profile-img">
-                    <div class="profile-ring"></div>
+                <div class="profile-container anim-reveal">
+                    <div class="profile-frame">
+                        <div class="profile-glow"></div>
+                        <img src="profile.jpg" alt="Deval Sonani" class="profile-img">
+                        <div class="profile-ring"></div>
+                    </div>
+                    <!-- Floating Tech Icons -->
+                    <div class="floating-icon fi-1"><i class="fab fa-java"></i></div>
+                    <div class="floating-icon fi-2"><i class="fab fa-aws"></i></div>
+                    <div class="floating-icon fi-3"><i class="fab fa-python"></i></div>
+                    <div class="floating-icon fi-4"><i class="fab fa-golang"></i></div>
                 </div>
 
                 <p class="hero-greeting anim-reveal">Hi, I'm</p>
@@ -144,16 +153,27 @@
                 <div class="section-line"></div>
             </div>
             <div class="exp-container anim-reveal">
-                <div class="exp-tabs" id="expTabs">
-                    <button class="exp-tab active" data-tab="godaddy">GoDaddy</button>
-                    <button class="exp-tab" data-tab="cars24">Cars24</button>
-                    <button class="exp-tab" data-tab="delhivery1">Delhivery (SDE1)</button>
-                    <button class="exp-tab" data-tab="delhivery0">Delhivery (Intern)</button>
+                <div class="exp-tabs">
                     <div class="tab-slider" id="tabSlider"></div>
+                    <button class="exp-tab active" data-target="exp-1">
+                        <img src="https://logo.clearbit.com/godaddy.com" alt="GoDaddy" class="tab-logo" onerror="this.style.display='none'"> 
+                        GoDaddy
+                    </button>
+                    <button class="exp-tab" data-target="exp-2">
+                        <img src="https://logo.clearbit.com/cars24.com" alt="Cars24" class="tab-logo" onerror="this.style.display='none'"> 
+                        Cars24
+                    </button>
+                    <button class="exp-tab" data-target="exp-3">
+                        <img src="https://logo.clearbit.com/delhivery.com" alt="Delhivery" class="tab-logo" onerror="this.style.display='none'"> 
+                        Delhivery
+                    </button>
                 </div>
                 <div class="exp-panels">
-                    <div class="exp-panel active" id="panel-godaddy">
-                        <h3>Software Development Engineer II <span class="accent">@ GoDaddy</span></h3>
+                    <div class="exp-panel active" id="exp-1">
+                        <div class="exp-header">
+                            <img src="https://logo.clearbit.com/godaddy.com" alt="GoDaddy" class="panel-logo" onerror="this.style.display='none'">
+                            <h3>Senior Software Engineer <span class="accent">@ GoDaddy</span></h3>
+                        </div>
                         <p class="exp-meta">Mar 2025 — Present &bull; Remote, Pune</p>
                         <ul>
                             <li>Architected a multi-region <strong>Auto-Renewal System</strong> processing <strong>10M+ daily transactions</strong> using Java 21, AWS SQS, and DynamoDB Global Tables.</li>
@@ -164,8 +184,11 @@
                         </ul>
                         <div class="exp-tech"><span>Java 21</span><span>Spring Boot</span><span>DynamoDB</span><span>AWS SQS</span><span>Vert.x</span><span>Couchbase</span></div>
                     </div>
-                    <div class="exp-panel" id="panel-cars24">
-                        <h3>Software Development Engineer II <span class="accent">@ Cars24</span></h3>
+                    <div class="exp-panel" id="exp-2">
+                        <div class="exp-header">
+                            <img src="https://logo.clearbit.com/cars24.com" alt="Cars24" class="panel-logo" onerror="this.style.display='none'">
+                            <h3>Software Engineer <span class="accent">@ Cars24</span></h3>
+                        </div>
                         <p class="exp-meta">Mar 2024 — Mar 2025 &bull; Gurugram</p>
                         <ul>
                             <li>Drove architecture of a new enterprise <strong>HRMS platform</strong> on Java/Spring Boot deployed on <strong>AWS ECS</strong>.</li>
@@ -176,26 +199,19 @@
                         </ul>
                         <div class="exp-tech"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>Redis</span><span>Go</span><span>AWS ECS</span></div>
                     </div>
-                    <div class="exp-panel" id="panel-delhivery1">
-                        <h3>Software Development Engineer I <span class="accent">@ Delhivery</span></h3>
-                        <p class="exp-meta">Jun 2022 — Mar 2024 &bull; Gurugram</p>
-                        <ul>
-                            <li>Designed <strong>Flare</strong>, the core load-allocation engine using Django + Gurobi MILP, handling <strong>100K+ packages daily</strong>.</li>
-                            <li>Built a <strong>VRP</strong> layer with <strong>Uber H3</strong> spatial indexing, improving fleet utilisation by <strong>25%</strong>.</li>
-                            <li>Developed a high-concurrency <strong>FastAPI</strong> microservice with a custom C++ spatial module.</li>
-                            <li>Architected a <strong>Java/Spring Boot</strong> event-streaming gateway via <strong>Kafka</strong> and <strong>AWS Kinesis</strong>.</li>
-                        </ul>
-                        <div class="exp-tech"><span>Python</span><span>Django</span><span>FastAPI</span><span>Gurobi</span><span>Kafka</span><span>AWS Kinesis</span></div>
-                    </div>
-                    <div class="exp-panel" id="panel-delhivery0">
-                        <h3>Software Development Intern <span class="accent">@ Delhivery</span></h3>
+                    <div class="exp-panel" id="exp-3">
+                        <div class="exp-header">
+                            <img src="https://logo.clearbit.com/delhivery.com" alt="Delhivery" class="panel-logo" onerror="this.style.display='none'">
+                            <h3>Software Developer <span class="accent">@ Delhivery</span></h3>
+                        </div>
                         <p class="exp-meta">Jan 2022 — May 2022 &bull; Gurugram</p>
                         <ul>
                             <li>Tuned <strong>PostGIS</strong> spatial indexes and rewrote polygon-join queries, cutting latency by <strong>50%</strong>.</li>
                             <li>Delivered ETL pipelines in <strong>Databricks (PySpark)</strong> to process TB-scale GPS logs.</li>
                             <li>Trained <strong>XGBoost</strong> models via MLflow for fleet capacity prediction with <strong>88% accuracy</strong>.</li>
+                            <li>Designed <strong>Flare</strong>, the core load-allocation engine using Django + Gurobi MILP, handling <strong>100K+ packages daily</strong>.</li>
                         </ul>
-                        <div class="exp-tech"><span>PostGIS</span><span>PySpark</span><span>Databricks</span><span>XGBoost</span><span>MLflow</span></div>
+                        <div class="exp-tech"><span>Python</span><span>Django</span><span>FastAPI</span><span>Gurobi</span><span>Kafka</span><span>AWS Kinesis</span></div>
                     </div>
                 </div>
             </div>
@@ -209,42 +225,43 @@
                 <div class="section-line"></div>
             </div>
             <div class="projects-grid">
-                <div class="project-card anim-reveal">
+                <!-- Project 1 -->
+                <div class="project-card anim-reveal" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
                     <div class="project-top"><div class="project-icon"><i class="fas fa-rotate"></i></div><span class="project-tag">Featured</span></div>
                     <h3>Auto-Renewal System (ARS)</h3>
                     <p>Multi-region subscription renewal engine processing 10M+ daily events at GoDaddy with DynamoDB Global Tables for race-condition prevention.</p>
                     <div class="project-tech"><span>Java 21</span><span>Spring Boot</span><span>AWS SQS</span><span>DynamoDB</span></div>
                     <div class="project-stats"><div class="pstat"><i class="fas fa-bolt"></i> 10M+ events/day</div><div class="pstat"><i class="fas fa-globe"></i> Multi-region</div></div>
                 </div>
-                <div class="project-card anim-reveal">
+                <div class="project-card anim-reveal" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
                     <div class="project-top"><div class="project-icon"><i class="fas fa-truck-fast"></i></div><span class="project-tag">Core</span></div>
                     <h3>Flare — Load Allocator</h3>
                     <p>Core logistics optimization engine modeled as a MILP using Gurobi, routing 100K+ packages daily across 500+ distribution centers.</p>
                     <div class="project-tech"><span>Python</span><span>Django</span><span>Gurobi</span><span>Uber H3</span></div>
                     <div class="project-stats"><div class="pstat"><i class="fas fa-box"></i> 100K+ pkgs/day</div><div class="pstat"><i class="fas fa-chart-line"></i> +25% utilisation</div></div>
                 </div>
-                <div class="project-card anim-reveal">
+                <div class="project-card anim-reveal" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
                     <div class="project-top"><div class="project-icon"><i class="fas fa-brain"></i></div><span class="project-tag">AI/ML</span></div>
                     <h3>NLP Declination Classifier</h3>
                     <p>Semantic classification pipeline using Gemini LLM and ChromaDB vector embeddings to categorize payment declination logs and optimize A/B experiments.</p>
                     <div class="project-tech"><span>Gemini LLM</span><span>ChromaDB</span><span>RAG</span><span>Java</span></div>
                     <div class="project-stats"><div class="pstat"><i class="fas fa-arrow-up"></i> Improved recovery</div><div class="pstat"><i class="fas fa-flask"></i> A/B tested</div></div>
                 </div>
-                <div class="project-card anim-reveal">
+                <div class="project-card anim-reveal" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
                     <div class="project-top"><div class="project-icon"><i class="fas fa-users-gear"></i></div><span class="project-tag">Platform</span></div>
                     <h3>Enterprise HRMS Platform</h3>
                     <p>Decomposed a Cars24 monolith into microservices with Closure Table org-tree design, slashing query latency by 99%.</p>
                     <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>Redis</span></div>
                     <div class="project-stats"><div class="pstat"><i class="fas fa-dollar-sign"></i> -25% infra cost</div><div class="pstat"><i class="fas fa-gauge-high"></i> 4.2s → 35ms</div></div>
                 </div>
-                <div class="project-card anim-reveal">
+                <div class="project-card anim-reveal" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
                     <div class="project-top"><div class="project-icon"><i class="fas fa-robot"></i></div><span class="project-tag">Hackathon</span></div>
                     <h3>RAG Logistics Agent</h3>
                     <p>AI-powered logistics support agent built at the Google × Delhivery Gen-AI Hackathon. Runner-Up out of 40+ teams.</p>
                     <div class="project-tech"><span>RAG</span><span>LangChain</span><span>LLM APIs</span><span>Python</span></div>
                     <div class="project-stats"><div class="pstat"><i class="fas fa-trophy"></i> Runner-Up</div><div class="pstat"><i class="fab fa-google"></i> Google × Delhivery</div></div>
                 </div>
-                <div class="project-card anim-reveal">
+                <div class="project-card anim-reveal" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
                     <div class="project-top"><div class="project-icon"><i class="fas fa-satellite-dish"></i></div><span class="project-tag">Streaming</span></div>
                     <h3>Real-Time Event Gateway</h3>
                     <p>Java/Spring Boot event-streaming gateway publishing real-time allocation snapshots via Apache Kafka and AWS Kinesis on EKS.</p>
@@ -262,7 +279,7 @@
                 <div class="section-line"></div>
             </div>
             <div class="skills-grid">
-                <div class="skill-card anim-reveal">
+                <div class="skill-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400">
                     <div class="skill-head"><i class="fas fa-code"></i><h3>Languages</h3></div>
                     <div class="skill-bars">
                         <div class="sbar"><span>Java</span><div class="bar"><div class="fill" data-w="95"></div></div></div>
@@ -272,7 +289,7 @@
                         <div class="sbar"><span>SQL</span><div class="bar"><div class="fill" data-w="90"></div></div></div>
                     </div>
                 </div>
-                <div class="skill-card anim-reveal">
+                <div class="skill-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400">
                     <div class="skill-head"><i class="fas fa-server"></i><h3>Backend & APIs</h3></div>
                     <div class="skill-bars">
                         <div class="sbar"><span>Spring Boot</span><div class="bar"><div class="fill" data-w="95"></div></div></div>
@@ -281,7 +298,7 @@
                         <div class="sbar"><span>REST / GraphQL</span><div class="bar"><div class="fill" data-w="90"></div></div></div>
                     </div>
                 </div>
-                <div class="skill-card anim-reveal">
+                <div class="skill-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400">
                     <div class="skill-head"><i class="fas fa-cloud"></i><h3>Cloud & DevOps</h3></div>
                     <div class="skill-bars">
                         <div class="sbar"><span>AWS</span><div class="bar"><div class="fill" data-w="90"></div></div></div>
@@ -289,7 +306,7 @@
                         <div class="sbar"><span>CI/CD</span><div class="bar"><div class="fill" data-w="82"></div></div></div>
                     </div>
                 </div>
-                <div class="skill-card anim-reveal">
+                <div class="skill-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400">
                     <div class="skill-head"><i class="fas fa-database"></i><h3>Data & Streaming</h3></div>
                     <div class="skill-bars">
                         <div class="sbar"><span>PostgreSQL</span><div class="bar"><div class="fill" data-w="92"></div></div></div>
@@ -309,12 +326,12 @@
                 <div class="section-line"></div>
             </div>
             <div class="ach-grid">
-                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fab fa-aws"></i></div><h4>AWS SA Certified</h4><p>Solutions Architect Associate</p></div>
-                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-database"></i></div><h4>MongoDB Certified</h4><p>Developer Associate</p></div>
-                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-trophy"></i></div><h4>Gen-AI Hackathon</h4><p>Runner-Up — Google × Delhivery</p></div>
-                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-ranking-star"></i></div><h4>ACPC AIR 24</h4><p>All-India Rank 24 — Gujarat</p></div>
-                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-file-lines"></i></div><h4>IEEE Publication</h4><p>Co-authored MESFET research</p></div>
-                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-laptop-code"></i></div><h4>Competitive Coder</h4><p>Active on CF &amp; LeetCode</p></div>
+                <div class="ach-card anim-reveal" data-tilt data-tilt-max="15" data-tilt-speed="400"><div class="ach-icon"><i class="fab fa-aws"></i></div><h4>AWS SA Certified</h4><p>Solutions Architect Associate</p></div>
+                <div class="ach-card anim-reveal" data-tilt data-tilt-max="15" data-tilt-speed="400"><div class="ach-icon"><i class="fas fa-database"></i></div><h4>MongoDB Certified</h4><p>Developer Associate</p></div>
+                <div class="ach-card anim-reveal" data-tilt data-tilt-max="15" data-tilt-speed="400"><div class="ach-icon"><i class="fas fa-trophy"></i></div><h4>Gen-AI Hackathon</h4><p>Runner-Up — Google × Delhivery</p></div>
+                <div class="ach-card anim-reveal" data-tilt data-tilt-max="15" data-tilt-speed="400"><div class="ach-icon"><i class="fas fa-ranking-star"></i></div><h4>ACPC AIR 24</h4><p>All-India Rank 24 — Gujarat</p></div>
+                <div class="ach-card anim-reveal" data-tilt data-tilt-max="15" data-tilt-speed="400"><div class="ach-icon"><i class="fas fa-file-lines"></i></div><h4>IEEE Publication</h4><p>Co-authored MESFET research</p></div>
+                <div class="ach-card anim-reveal" data-tilt data-tilt-max="15" data-tilt-speed="400"><div class="ach-icon"><i class="fas fa-laptop-code"></i></div><h4>Competitive Coder</h4><p>Active on CF &amp; LeetCode</p></div>
             </div>
         </section>
 

@@ -36,7 +36,7 @@
     Particle.prototype.draw = function () {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.sz, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(100,255,218,' + this.op + ')';
+        ctx.fillStyle = 'rgba(255,255,255,' + this.op + ')';
         ctx.fill();
     };
 
@@ -56,7 +56,7 @@
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = 'rgba(100,255,218,' + (0.055 * (1 - d / 140)) + ')';
+                    ctx.strokeStyle = 'rgba(255,255,255,' + (0.055 * (1 - d / 140)) + ')';
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
@@ -69,7 +69,7 @@
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(mx, my);
-                ctx.strokeStyle = 'rgba(100,255,218,' + (0.1 * (1 - dm / 180)) + ')';
+                ctx.strokeStyle = 'rgba(255,255,255,' + (0.1 * (1 - dm / 180)) + ')';
                 ctx.lineWidth = 0.5;
                 ctx.stroke();
             }
@@ -130,6 +130,17 @@
         });
     }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
     reveals.forEach(function (el) { revealObs.observe(el); });
+
+    // ---- SCROLL PROGRESS BAR ----
+    var scrollProgress = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', function() {
+        if(scrollProgress) {
+            var scrollTotal = document.documentElement.scrollTop || document.body.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrollRatio = (scrollTotal / height) * 100;
+            scrollProgress.style.width = scrollRatio + '%';
+        }
+    });
 
     // ---- COUNTER ANIMATION ----
     var counters = document.querySelectorAll('.stat-num');
