@@ -311,3 +311,19 @@ window.addEventListener('mousemove', e => {
   document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
   document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
 });
+
+// Sober Toggle Logic
+function toggleExp(btn) {
+    var wrapper = btn.previousElementSibling;
+    var icon = btn.querySelector('i');
+    var text = btn.querySelector('.toggle-text');
+    
+    wrapper.classList.toggle('expanded');
+    btn.classList.toggle('expanded');
+    
+    if (wrapper.classList.contains('expanded')) {
+        text.innerText = 'Show less';
+    } else {
+        text.innerText = 'View full impact';
+    }
+}

@@ -602,3 +602,71 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
 }
+
+/* --- SOBER TOGGLES --- */
+.exp-content-wrapper {
+    position: relative;
+    max-height: 155px; /* Roughly 2 bullet points */
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exp-content-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--bg2));
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+[data-theme="light"] .exp-content-wrapper::after {
+    background: linear-gradient(to bottom, transparent, #FFFFFF);
+}
+
+.exp-content-wrapper.expanded {
+    max-height: 1200px;
+}
+
+.exp-content-wrapper.expanded::after {
+    opacity: 0;
+}
+
+.sober-toggle {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    font-family: var(--font);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0;
+    transition: var(--fast);
+}
+
+.sober-toggle:hover {
+    color: var(--accent2);
+}
+
+.sober-toggle i {
+    transition: var(--med);
+}
+
+.sober-toggle:hover i {
+    transform: translateY(3px);
+}
+
+.sober-toggle.expanded i {
+    transform: rotate(180deg);
+}
+
+.sober-toggle.expanded:hover i {
+    transform: rotate(180deg) translateY(-3px);
+}
