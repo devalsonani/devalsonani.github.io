@@ -102,7 +102,7 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 .fi-2{bottom:10px;right:-15px;animation-delay:1.5s;}
 .fi-3{top:50%;left:-30px;animation-delay:3s;}
 .fi-4{top:20px;right:-20px;animation-delay:4.5s;}
-@keyframes floatOrbit{0%{transform:translateY(0px) rotate(0deg);}100%{transform:translateY(-15px) rotate(5deg);}}
+@keyframes floatOrbit{0%{transform:translateY(0px) scale(1);}50%{transform:translateY(-20px) scale(1.05);}100%{transform:translateY(0px) scale(1);}}
 
 .hero-greeting{font-family:var(--mono);font-size:1.2rem; line-height: 1.8;color:var(--text2);margin-bottom:-0.8rem;letter-spacing:1px;margin-top:1rem;}
 .hero-name{font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1.1;margin-bottom:0;background:linear-gradient(270deg, #06b6d4, #8b5cf6, #3b82f6, #06b6d4);background-size: 300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation: gradientText 6s ease infinite;}
@@ -402,7 +402,14 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 .mt-4{margin-top:3rem;}
 .tech-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;max-width:800px;}
 .tech-icon{width:65px;height:65px;background:var(--glass);border:1px solid var(--border);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text);transition:all 0.3s ease;cursor:default;}
-.tech-icon:hover{background:var(--glass-hover);color:var(--accent);border-color:var(--accent);transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,229,255,0.2);}
+.tech-icon:hover {
+    background: var(--glass-hover);
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-8px) scale(1.15);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.25);
+    z-index: 10;
+}
 
 /* --- ACHIEVEMENTS --- */
 .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1.1rem;}
@@ -530,10 +537,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
 }
 
 .tech-icon:hover {
-    background: #FFFFFF;
-    color: #0066FF;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    border-color: #0066FF;
+    background: var(--glass-hover);
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-8px) scale(1.15);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.25);
+    z-index: 10;
 }
 
 .floating-icon {
@@ -617,7 +626,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
 /* Invert black icons in Dark Mode for visibility */
 [data-theme="dark"] i[class*="devicon-github"],
 [data-theme="dark"] i[class*="devicon-nextjs"],
-[data-theme="dark"] i[class*="devicon-express"] {
+[data-theme="dark"] i[class*="devicon-express"],
+[data-theme="dark"] .exp-tech i[class*="devicon-amazonwebservices"],
+[data-theme="dark"] .project-tech i[class*="devicon-amazonwebservices"] {
     filter: invert(1);
 }
 
@@ -635,12 +646,12 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
     border: 1px solid var(--border);
     border-radius: var(--r);
     padding: 2rem;
-    transition: var(--med);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
 }
-
 .skill-cluster:hover {
-    border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent2);
 }
 
 .cluster-title {
