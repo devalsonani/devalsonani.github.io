@@ -172,12 +172,9 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 .exp-tab.active{color:var(--text);font-weight:600;}
 .tab-slider{position:absolute;top:0;left:-2px;height:33.33%;width:2px;background:var(--accent);z-index:2;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
 
-/* Company CSS Logos */
-.company-logo{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:4px;font-weight:800;font-size:0.8rem;color:#fff;}
-.company-logo.large{width:42px;height:42px;border-radius:8px;font-size:1.3rem;}
-.company-logo.gd{background:#00a4a6;}
-.company-logo.c24{background:#f06422;}
-.company-logo.del{background:#e3001b;}
+/* Company Logos (Images) */
+.tab-logo{width:22px;height:22px;object-fit:contain;border-radius:4px;background:#ffffff;padding:2px;}
+.panel-logo{width:42px;height:42px;object-fit:contain;border-radius:6px;background:#ffffff;padding:4px;}
 
 .exp-panels{position:relative;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:2rem;min-height:300px;}
 .exp-panel{display:none;animation:fadeInUp 0.5s ease forwards;}
