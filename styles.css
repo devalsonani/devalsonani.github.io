@@ -764,13 +764,27 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
 }
 
 [data-theme="light"] .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    border-bottom: 1px solid #E5E7EB;
 }
 
 [data-theme="light"] .nav-link {
-    color: var(--text);
-    font-weight: 600;
+    color: #374151;
+    font-weight: 500;
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+    color: #0066FF;
+}
+
+[data-theme="light"] .logo {
+    color: #0066FF;
+}
+
+[data-theme="light"] .logo-br {
+    color: #9CA3AF;
 }
 
 
