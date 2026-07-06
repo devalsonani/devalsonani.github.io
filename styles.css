@@ -173,8 +173,8 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 .tab-slider{position:absolute;top:0;left:-2px;height:33.33%;width:2px;background:var(--accent);z-index:2;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
 
 /* Company Logos (Images) */
-.tab-logo{width:22px;height:22px;object-fit:contain;border-radius:4px;background:#ffffff;padding:2px;}
-.panel-logo{width:42px;height:42px;object-fit:contain;border-radius:6px;background:#ffffff;padding:4px;}
+.tab-logo{width:22px;height:22px;object-fit:contain;border-radius:4px;}
+.panel-logo{width:42px;height:42px;object-fit:contain;border-radius:6px;}
 
 .exp-panels{position:relative;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:2rem;min-height:300px;}
 .exp-panel{display:none;animation:fadeInUp 0.5s ease forwards;}
