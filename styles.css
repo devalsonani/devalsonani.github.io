@@ -11,8 +11,8 @@
     --text-muted: #8A9BB5;
     --accent: #00E5FF;
     --accent2: #B100FF;
-    --glass: rgba(10, 10, 20, 0.5);
-    --glass-hover: rgba(20, 20, 35, 0.7);
+    --glass: #0B101E;
+    --glass-hover: #131C2F;
     --border: rgba(255, 255, 255, 0.08);
     --border2: rgba(0, 229, 255, 0.3);
     --shadow-glow: 0 0 25px rgba(0, 229, 255, 0.15);
