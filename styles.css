@@ -677,3 +677,133 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
 [data-theme="dark"] i[class*="devicon-express"] {
     filter: invert(1);
 }
+
+/* --- SKILL CLUSTERS --- */
+.skills-clusters {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-cluster {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 2rem;
+    transition: var(--med);
+}
+
+.skill-cluster:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cluster-title {
+    font-size: 1.3rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.cluster-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* --- TROPHY CASE ACHIEVEMENTS --- */
+.trophy-case {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.trophy-case::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+
+.trophy-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+.trophy-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    background: var(--bg2);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: var(--med);
+}
+
+.trophy-card:hover .trophy-icon {
+    border-color: var(--accent);
+    background: var(--glass-hover);
+    color: var(--accent2);
+    box-shadow: var(--shadow-glow);
+    transform: scale(1.1);
+}
+
+.trophy-content {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 1.5rem;
+    flex: 1;
+    transition: var(--med);
+}
+
+.trophy-card:hover .trophy-content {
+    border-color: var(--accent);
+    transform: translateX(5px);
+}
+
+.trophy-content h3 {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.trophy-content p {
+    color: var(--text2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media(max-width:768px){
+    .trophy-case::before {
+        display: none;
+    }
+    .trophy-card {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+    .trophy-card:hover .trophy-content {
+        transform: translateY(-5px);
+    }
+}
