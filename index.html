@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deval Sonani | Senior Software Engineer</title>
+    <title>Deval Sonani — Senior Software Engineer</title>
     <meta name="description" content="Senior Software Engineer specializing in distributed systems, scalable backends, and high-throughput architectures. 4.5+ years building systems that process 10M+ events daily.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,18 +12,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Particle canvas background -->
+    <canvas id="particles"></canvas>
+
     <!-- Cursor glow -->
     <div class="cursor-glow" id="cursorGlow"></div>
 
-    <!-- Particle canvas -->
-    <canvas id="particles"></canvas>
-
-    <!-- Navigation -->
+    <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">
-                <span class="logo-bracket">{</span>DS<span class="logo-bracket">}</span>
-            </a>
+            <a href="#home" class="logo"><span class="logo-br">{</span>DS<span class="logo-br">}</span></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
                 <li><a href="#about" class="nav-link" data-section="about">About</a></li>
@@ -33,487 +32,313 @@
                 <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
                 <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
     <main>
-        <!-- ============ HERO ============ -->
+
+        <!-- ========== HERO ========== -->
         <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="hero-badge scroll-reveal">
-                    <span class="pulse-dot"></span> Available for Opportunities
-                </div>
-                <p class="hero-greeting scroll-reveal">Hi there, I'm</p>
-                <h1 class="hero-name scroll-reveal">Deval Sonani<span class="accent-dot">.</span></h1>
-                <div class="hero-typed-wrapper scroll-reveal">
-                    <span class="typed-prefix">I build </span>
-                    <span class="typed-text" id="typedText"></span>
-                    <span class="typed-cursor">|</span>
-                </div>
-                <p class="hero-description scroll-reveal">
-                    Senior Software Engineer crafting high-throughput distributed systems, 
-                    scalable microservices, and data-intensive backends that power millions of transactions daily.
-                </p>
-                <div class="hero-cta scroll-reveal">
-                    <a href="#projects" class="btn btn-primary">
-                        <span>View My Work</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <span>Let's Talk</span>
-                    </a>
-                </div>
-                <div class="hero-stats scroll-reveal">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="4.5">0</span><span class="stat-suffix">+</span>
-                        <span class="stat-label">Years Experience</span>
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="hero-badge anim-reveal">
+                        <span class="pulse-dot"></span> Open to Opportunities
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="10">0</span><span class="stat-suffix">M+</span>
-                        <span class="stat-label">Daily Events</span>
+                    <p class="hero-greeting anim-reveal">Hi, I'm</p>
+                    <h1 class="hero-name anim-reveal">Deval Sonani<span class="dot">.</span></h1>
+                    <div class="hero-typed anim-reveal">
+                        <span class="typed-pre">I build </span><span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="100">0</span><span class="stat-suffix">K+</span>
-                        <span class="stat-label">Daily Packages</span>
+                    <p class="hero-desc anim-reveal">
+                        Senior Software Engineer crafting high-throughput distributed systems, scalable microservices, 
+                        and data-intensive backends powering millions of transactions daily.
+                    </p>
+                    <div class="hero-cta anim-reveal">
+                        <a href="#projects" class="btn btn-primary"><span>View My Work</span><i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-outline"><span>Let's Talk</span></a>
+                    </div>
+                    <div class="hero-stats anim-reveal">
+                        <div class="stat"><span class="stat-num" data-target="4.5">0</span><span class="stat-plus">+</span><span class="stat-label">Years Exp</span></div>
+                        <div class="stat-div"></div>
+                        <div class="stat"><span class="stat-num" data-target="10">0</span><span class="stat-plus">M+</span><span class="stat-label">Daily Events</span></div>
+                        <div class="stat-div"></div>
+                        <div class="stat"><span class="stat-num" data-target="100">0</span><span class="stat-plus">K+</span><span class="stat-label">Daily Packages</span></div>
+                    </div>
+                </div>
+                <div class="hero-right anim-reveal">
+                    <div class="profile-frame">
+                        <div class="profile-glow"></div>
+                        <img src="profile.jpg" alt="Deval Sonani" class="profile-img">
+                        <div class="profile-ring"></div>
+                    </div>
+                    <div class="profile-code">
+                        <code>while(alive) { eat(); sleep(); <span class="hl">code();</span> }</code>
                     </div>
                 </div>
             </div>
             <div class="scroll-indicator">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
+                <div class="mouse"><div class="wheel"></div></div>
                 <span>Scroll Down</span>
             </div>
         </section>
 
-        <!-- ============ ABOUT ============ -->
+        <!-- ========== ABOUT ========== -->
         <section id="about" class="section">
-            <div class="section-header scroll-reveal">
-                <span class="section-number">01.</span>
-                <h2 class="section-title">About Me</h2>
+            <div class="section-header anim-reveal">
+                <span class="section-num">01.</span>
+                <h2>About Me</h2>
                 <div class="section-line"></div>
             </div>
             <div class="about-grid">
-                <div class="about-text scroll-reveal">
-                    <p>
-                        I'm a Full-Stack Software Engineer who thrives on building complex backend systems that 
-                        operate at massive scale. My journey started at <strong>Delhivery</strong>, where I designed 
-                        logistics optimization engines routing 100K+ packages daily, and has taken me through 
-                        <strong>Cars24</strong> and now <strong>GoDaddy</strong>, where I architect subscription 
-                        platforms processing 10M+ daily transactions.
-                    </p>
-                    <p>
-                        I specialize in transforming ambiguous business problems into elegant technical architectures. 
-                        Whether it's migrating legacy C++ billing systems into modern Spring Boot microservices, 
-                        or building NLP pipelines with LLMs to classify payment logs — I focus on delivering 
-                        measurable engineering impact.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Pune, India</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>B.Tech CS — DA-IICT (8.8 CGPA)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>AWS Solutions Architect</span>
-                        </div>
+                <div class="about-text anim-reveal">
+                    <p>I'm a backend-obsessed engineer who thrives at the intersection of <strong>distributed systems</strong>, <strong>operations research</strong>, and <strong>AI</strong>. My journey began at <strong>Delhivery</strong>, designing optimization solvers routing 100K+ packages, then moved through <strong>Cars24</strong> where I re-architected enterprise platforms, and now at <strong>GoDaddy</strong> where I build subscription engines processing <strong>10M+ daily transactions</strong>.</p>
+                    <p>I live for turning ambiguous business problems into elegant, scalable architectures. Whether it's migrating legacy C++ billing into modern Spring Boot microservices or building NLP pipelines with LLMs — I deliver measurable impact.</p>
+                    <div class="about-chips">
+                        <div class="chip"><i class="fas fa-map-marker-alt"></i> Pune, India</div>
+                        <div class="chip"><i class="fas fa-graduation-cap"></i> B.Tech CS — DA-IICT (8.8 CGPA)</div>
+                        <div class="chip"><i class="fab fa-aws"></i> AWS Solutions Architect</div>
+                        <div class="chip"><i class="fas fa-database"></i> MongoDB Certified</div>
+                        <div class="chip"><i class="fas fa-laptop-code"></i> Competitive Coder</div>
                     </div>
                 </div>
-                <div class="about-terminal scroll-reveal">
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <div class="terminal-dot red"></div>
-                            <div class="terminal-dot yellow"></div>
-                            <div class="terminal-dot green"></div>
-                            <span class="terminal-title">deval@portfolio ~ </span>
+                <div class="about-terminal anim-reveal">
+                    <div class="term">
+                        <div class="term-bar">
+                            <div class="term-dot r"></div><div class="term-dot y"></div><div class="term-dot g"></div>
+                            <span class="term-title">deval@machine ~</span>
                         </div>
-                        <div class="terminal-body">
-                            <p><span class="term-prompt">$</span> cat about.json</p>
-                            <pre><code>{
-  <span class="term-key">"name"</span>: <span class="term-str">"Deval Sonani"</span>,
-  <span class="term-key">"role"</span>: <span class="term-str">"Senior Software Engineer"</span>,
-  <span class="term-key">"experience"</span>: <span class="term-num">4.5</span>,
-  <span class="term-key">"companies"</span>: [
-    <span class="term-str">"GoDaddy"</span>,
-    <span class="term-str">"Cars24"</span>,
-    <span class="term-str">"Delhivery"</span>
-  ],
-  <span class="term-key">"passions"</span>: [
-    <span class="term-str">"Distributed Systems"</span>,
-    <span class="term-str">"System Design"</span>,
-    <span class="term-str">"Open Source"</span>
-  ]
-}</code></pre>
+                        <div class="term-body">
+                            <p><span class="prompt">$</span> cat engineer.json</p>
+                            <pre>{
+  <span class="k">"name"</span>: <span class="s">"Deval Sonani"</span>,
+  <span class="k">"role"</span>: <span class="s">"Senior Software Engineer"</span>,
+  <span class="k">"experience"</span>: <span class="n">4.5</span>,
+  <span class="k">"companies"</span>: [<span class="s">"GoDaddy"</span>, <span class="s">"Cars24"</span>, <span class="s">"Delhivery"</span>],
+  <span class="k">"stack"</span>: [<span class="s">"Java"</span>, <span class="s">"Go"</span>, <span class="s">"Python"</span>, <span class="s">"AWS"</span>],
+  <span class="k">"loves"</span>: [<span class="s">"System Design"</span>, <span class="s">"Open Source"</span>],
+  <span class="k">"coffee_cups_per_day"</span>: <span class="n">4</span>
+}</pre>
+                            <p><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ EXPERIENCE ============ -->
+        <!-- ========== EXPERIENCE ========== -->
         <section id="experience" class="section">
-            <div class="section-header scroll-reveal">
-                <span class="section-number">02.</span>
-                <h2 class="section-title">Experience</h2>
+            <div class="section-header anim-reveal">
+                <span class="section-num">02.</span>
+                <h2>Experience</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="exp-tabs">
-                <div class="exp-tab-list scroll-reveal" role="tablist">
-                    <button class="exp-tab active" data-tab="godaddy" role="tab">GoDaddy</button>
-                    <button class="exp-tab" data-tab="cars24" role="tab">Cars24</button>
-                    <button class="exp-tab" data-tab="delhivery-sde" role="tab">Delhivery (SDE1)</button>
-                    <button class="exp-tab" data-tab="delhivery-intern" role="tab">Delhivery (Intern)</button>
-                    <div class="tab-indicator"></div>
+            <div class="exp-container anim-reveal">
+                <div class="exp-tabs" id="expTabs">
+                    <button class="exp-tab active" data-tab="godaddy">GoDaddy</button>
+                    <button class="exp-tab" data-tab="cars24">Cars24</button>
+                    <button class="exp-tab" data-tab="delhivery1">Delhivery (SDE1)</button>
+                    <button class="exp-tab" data-tab="delhivery0">Delhivery (Intern)</button>
+                    <div class="tab-slider" id="tabSlider"></div>
                 </div>
-                <div class="exp-tab-panels">
-                    <!-- GoDaddy -->
+                <div class="exp-panels">
                     <div class="exp-panel active" id="panel-godaddy">
-                        <h3>Software Development Engineer II <span class="highlight">@ GoDaddy</span></h3>
-                        <p class="exp-date">Mar 2025 — Present &nbsp;|&nbsp; Remote, Pune</p>
-                        <ul class="exp-list">
+                        <h3>Software Development Engineer II <span class="accent">@ GoDaddy</span></h3>
+                        <p class="exp-meta">Mar 2025 — Present &bull; Remote, Pune</p>
+                        <ul>
                             <li>Architected a multi-region <strong>Auto-Renewal System</strong> processing <strong>10M+ daily transactions</strong> using Java 21, AWS SQS, and DynamoDB Global Tables.</li>
                             <li>Led the migration of a legacy C++ billing monolith into modern <strong>Spring Boot 3.x</strong> microservices.</li>
                             <li>Built an asynchronous event sync worker in <strong>Vert.x</strong>, cutting lookup latencies by <strong>40%</strong>.</li>
                             <li>Developed an NLP pipeline using <strong>Gemini LLM</strong> and <strong>ChromaDB</strong> to classify declination logs.</li>
                             <li>Introduced <strong>ArchUnit</strong> and <strong>Testcontainers</strong>, raising test coverage by <strong>15%</strong>.</li>
                         </ul>
-                        <div class="exp-tags">
-                            <span>Java 21</span><span>Spring Boot</span><span>DynamoDB</span><span>AWS SQS</span><span>Vert.x</span><span>Couchbase</span>
-                        </div>
+                        <div class="exp-tech"><span>Java 21</span><span>Spring Boot</span><span>DynamoDB</span><span>AWS SQS</span><span>Vert.x</span><span>Couchbase</span></div>
                     </div>
-                    <!-- Cars24 -->
                     <div class="exp-panel" id="panel-cars24">
-                        <h3>Software Development Engineer II <span class="highlight">@ Cars24</span></h3>
-                        <p class="exp-date">Mar 2024 — Mar 2025 &nbsp;|&nbsp; Gurugram</p>
-                        <ul class="exp-list">
-                            <li>Drove the architecture of a new enterprise <strong>HRMS platform</strong> on Java/Spring Boot deployed on <strong>AWS ECS</strong>.</li>
+                        <h3>Software Development Engineer II <span class="accent">@ Cars24</span></h3>
+                        <p class="exp-meta">Mar 2024 — Mar 2025 &bull; Gurugram</p>
+                        <ul>
+                            <li>Drove architecture of a new enterprise <strong>HRMS platform</strong> on Java/Spring Boot deployed on <strong>AWS ECS</strong>.</li>
                             <li>Decomposed a legacy monolith into microservices, reducing AWS infrastructure costs by <strong>25%</strong>.</li>
                             <li>Optimized hierarchical queries using Closure Tables and <strong>Redis</strong>, slashing latency from <strong>4.2s to 35ms</strong>.</li>
-                            <li>Automated payroll workflows, saving the finance team <strong>20%</strong> in monthly reconciliation time.</li>
+                            <li>Automated payroll workflows, saving the finance team <strong>20%</strong> monthly reconciliation time.</li>
                             <li>Delivered a high-concurrency notification gateway in <strong>Go</strong> for <strong>10,000+ employees</strong>.</li>
                         </ul>
-                        <div class="exp-tags">
-                            <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>Redis</span><span>Go</span><span>AWS ECS</span>
-                        </div>
+                        <div class="exp-tech"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>Redis</span><span>Go</span><span>AWS ECS</span></div>
                     </div>
-                    <!-- Delhivery SDE1 -->
-                    <div class="exp-panel" id="panel-delhivery-sde">
-                        <h3>Software Development Engineer I <span class="highlight">@ Delhivery</span></h3>
-                        <p class="exp-date">Jun 2022 — Mar 2024 &nbsp;|&nbsp; Gurugram</p>
-                        <ul class="exp-list">
-                            <li>Designed <strong>Flare</strong>, the core last-mile load-allocation engine using Django and Gurobi MILP, handling <strong>100k+ packages daily</strong>.</li>
+                    <div class="exp-panel" id="panel-delhivery1">
+                        <h3>Software Development Engineer I <span class="accent">@ Delhivery</span></h3>
+                        <p class="exp-meta">Jun 2022 — Mar 2024 &bull; Gurugram</p>
+                        <ul>
+                            <li>Designed <strong>Flare</strong>, the core load-allocation engine using Django + Gurobi MILP, handling <strong>100K+ packages daily</strong>.</li>
                             <li>Built a <strong>VRP</strong> layer with <strong>Uber H3</strong> spatial indexing, improving fleet utilisation by <strong>25%</strong>.</li>
-                            <li>Developed a <strong>FastAPI</strong> microservice with a custom C++ spatial computation module.</li>
+                            <li>Developed a high-concurrency <strong>FastAPI</strong> microservice with a custom C++ spatial module.</li>
                             <li>Architected a <strong>Java/Spring Boot</strong> event-streaming gateway via <strong>Kafka</strong> and <strong>AWS Kinesis</strong>.</li>
                         </ul>
-                        <div class="exp-tags">
-                            <span>Python</span><span>Django</span><span>FastAPI</span><span>Gurobi</span><span>Kafka</span><span>AWS Kinesis</span>
-                        </div>
+                        <div class="exp-tech"><span>Python</span><span>Django</span><span>FastAPI</span><span>Gurobi</span><span>Kafka</span><span>AWS Kinesis</span></div>
                     </div>
-                    <!-- Delhivery Intern -->
-                    <div class="exp-panel" id="panel-delhivery-intern">
-                        <h3>Software Development Intern <span class="highlight">@ Delhivery</span></h3>
-                        <p class="exp-date">Jan 2022 — May 2022 &nbsp;|&nbsp; Gurugram</p>
-                        <ul class="exp-list">
-                            <li>Tuned <strong>PostGIS</strong> spatial indexes and rewrote complex polygon-join queries, cutting lookup latency by <strong>50%</strong>.</li>
+                    <div class="exp-panel" id="panel-delhivery0">
+                        <h3>Software Development Intern <span class="accent">@ Delhivery</span></h3>
+                        <p class="exp-meta">Jan 2022 — May 2022 &bull; Gurugram</p>
+                        <ul>
+                            <li>Tuned <strong>PostGIS</strong> spatial indexes and rewrote polygon-join queries, cutting latency by <strong>50%</strong>.</li>
                             <li>Delivered ETL pipelines in <strong>Databricks (PySpark)</strong> to process TB-scale GPS logs.</li>
-                            <li>Trained and deployed <strong>XGBoost</strong> models via MLflow for fleet capacity prediction with <strong>88% accuracy</strong>.</li>
+                            <li>Trained <strong>XGBoost</strong> models via MLflow for fleet capacity prediction with <strong>88% accuracy</strong>.</li>
                         </ul>
-                        <div class="exp-tags">
-                            <span>PostGIS</span><span>PySpark</span><span>Databricks</span><span>XGBoost</span><span>MLflow</span>
-                        </div>
+                        <div class="exp-tech"><span>PostGIS</span><span>PySpark</span><span>Databricks</span><span>XGBoost</span><span>MLflow</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ PROJECTS ============ -->
+        <!-- ========== PROJECTS ========== -->
         <section id="projects" class="section">
-            <div class="section-header scroll-reveal">
-                <span class="section-number">03.</span>
-                <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header anim-reveal">
+                <span class="section-num">03.</span>
+                <h2>Featured Projects</h2>
                 <div class="section-line"></div>
             </div>
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card scroll-reveal">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-label">Featured</span>
-                        </div>
-                        <div class="project-icon-bg"><i class="fas fa-rotate"></i></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Auto-Renewal System (ARS)</h3>
-                        <p>Multi-region subscription renewal engine processing 10M+ daily events at GoDaddy. Designed with DynamoDB Global Tables to prevent concurrent race conditions across regions.</p>
-                        <div class="project-tech">
-                            <span>Java 21</span><span>Spring Boot</span><span>AWS SQS</span><span>DynamoDB</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric"><i class="fas fa-bolt"></i> 10M+ events/day</div>
-                            <div class="metric"><i class="fas fa-globe"></i> Multi-region</div>
-                        </div>
-                    </div>
+                <div class="project-card anim-reveal">
+                    <div class="project-top"><div class="project-icon"><i class="fas fa-rotate"></i></div><span class="project-tag">Featured</span></div>
+                    <h3>Auto-Renewal System (ARS)</h3>
+                    <p>Multi-region subscription renewal engine processing 10M+ daily events at GoDaddy with DynamoDB Global Tables for race-condition prevention.</p>
+                    <div class="project-tech"><span>Java 21</span><span>Spring Boot</span><span>AWS SQS</span><span>DynamoDB</span></div>
+                    <div class="project-stats"><div class="pstat"><i class="fas fa-bolt"></i> 10M+ events/day</div><div class="pstat"><i class="fas fa-globe"></i> Multi-region</div></div>
                 </div>
-                <!-- Project 2 -->
-                <div class="project-card scroll-reveal">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-label">Featured</span>
-                        </div>
-                        <div class="project-icon-bg"><i class="fas fa-truck-fast"></i></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Flare — Last-Mile Load Allocator</h3>
-                        <p>Core logistics optimization engine at Delhivery modeled as a Mixed-Integer Linear Program using Gurobi, routing 100K+ packages daily across 500+ distribution centers.</p>
-                        <div class="project-tech">
-                            <span>Python</span><span>Django</span><span>Gurobi</span><span>Uber H3</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric"><i class="fas fa-box"></i> 100K+ pkgs/day</div>
-                            <div class="metric"><i class="fas fa-chart-line"></i> +25% utilisation</div>
-                        </div>
-                    </div>
+                <div class="project-card anim-reveal">
+                    <div class="project-top"><div class="project-icon"><i class="fas fa-truck-fast"></i></div><span class="project-tag">Core</span></div>
+                    <h3>Flare — Load Allocator</h3>
+                    <p>Core logistics optimization engine modeled as a MILP using Gurobi, routing 100K+ packages daily across 500+ distribution centers.</p>
+                    <div class="project-tech"><span>Python</span><span>Django</span><span>Gurobi</span><span>Uber H3</span></div>
+                    <div class="project-stats"><div class="pstat"><i class="fas fa-box"></i> 100K+ pkgs/day</div><div class="pstat"><i class="fas fa-chart-line"></i> +25% utilisation</div></div>
                 </div>
-                <!-- Project 3 -->
-                <div class="project-card scroll-reveal">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-label">AI/ML</span>
-                        </div>
-                        <div class="project-icon-bg"><i class="fas fa-brain"></i></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>NLP Declination Classifier</h3>
-                        <p>Semantic classification pipeline using Gemini LLM and ChromaDB vector embeddings to categorize payment declination logs and optimize dunning A/B experiments.</p>
-                        <div class="project-tech">
-                            <span>Gemini LLM</span><span>ChromaDB</span><span>RAG</span><span>Java</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric"><i class="fas fa-arrow-up"></i> Improved recovery</div>
-                            <div class="metric"><i class="fas fa-flask"></i> A/B tested</div>
-                        </div>
-                    </div>
+                <div class="project-card anim-reveal">
+                    <div class="project-top"><div class="project-icon"><i class="fas fa-brain"></i></div><span class="project-tag">AI/ML</span></div>
+                    <h3>NLP Declination Classifier</h3>
+                    <p>Semantic classification pipeline using Gemini LLM and ChromaDB vector embeddings to categorize payment declination logs and optimize A/B experiments.</p>
+                    <div class="project-tech"><span>Gemini LLM</span><span>ChromaDB</span><span>RAG</span><span>Java</span></div>
+                    <div class="project-stats"><div class="pstat"><i class="fas fa-arrow-up"></i> Improved recovery</div><div class="pstat"><i class="fas fa-flask"></i> A/B tested</div></div>
                 </div>
-                <!-- Project 4 -->
-                <div class="project-card scroll-reveal">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-label">Platform</span>
-                        </div>
-                        <div class="project-icon-bg"><i class="fas fa-users-gear"></i></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Enterprise HRMS Platform</h3>
-                        <p>Decomposed a legacy monolith into independently deployable microservices for Cars24. Designed org-tree data model with Closure Tables, slashing query latency by 99%.</p>
-                        <div class="project-tech">
-                            <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>Redis</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric"><i class="fas fa-dollar-sign"></i> -25% infra cost</div>
-                            <div class="metric"><i class="fas fa-gauge-high"></i> 4.2s → 35ms</div>
-                        </div>
-                    </div>
+                <div class="project-card anim-reveal">
+                    <div class="project-top"><div class="project-icon"><i class="fas fa-users-gear"></i></div><span class="project-tag">Platform</span></div>
+                    <h3>Enterprise HRMS Platform</h3>
+                    <p>Decomposed a Cars24 monolith into microservices with Closure Table org-tree design, slashing query latency by 99%.</p>
+                    <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>Redis</span></div>
+                    <div class="project-stats"><div class="pstat"><i class="fas fa-dollar-sign"></i> -25% infra cost</div><div class="pstat"><i class="fas fa-gauge-high"></i> 4.2s → 35ms</div></div>
                 </div>
-                <!-- Project 5 -->
-                <div class="project-card scroll-reveal">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-label">Hackathon</span>
-                        </div>
-                        <div class="project-icon-bg"><i class="fas fa-robot"></i></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>RAG Logistics Agent</h3>
-                        <p>AI-powered logistics support agent built at the Google × Delhivery Gen-AI Hackathon. Placed Runner-Up out of 40+ teams using Retrieval-Augmented Generation and LLMs.</p>
-                        <div class="project-tech">
-                            <span>RAG</span><span>LangChain</span><span>LLM APIs</span><span>Python</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric"><i class="fas fa-trophy"></i> Runner-Up</div>
-                            <div class="metric"><i class="fab fa-google"></i> Google × Delhivery</div>
-                        </div>
-                    </div>
+                <div class="project-card anim-reveal">
+                    <div class="project-top"><div class="project-icon"><i class="fas fa-robot"></i></div><span class="project-tag">Hackathon</span></div>
+                    <h3>RAG Logistics Agent</h3>
+                    <p>AI-powered logistics support agent built at the Google × Delhivery Gen-AI Hackathon. Runner-Up out of 40+ teams.</p>
+                    <div class="project-tech"><span>RAG</span><span>LangChain</span><span>LLM APIs</span><span>Python</span></div>
+                    <div class="project-stats"><div class="pstat"><i class="fas fa-trophy"></i> Runner-Up</div><div class="pstat"><i class="fab fa-google"></i> Google × Delhivery</div></div>
                 </div>
-                <!-- Project 6 -->
-                <div class="project-card scroll-reveal">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-label">Streaming</span>
-                        </div>
-                        <div class="project-icon-bg"><i class="fas fa-satellite-dish"></i></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Real-Time Event Gateway</h3>
-                        <p>Java/Spring Boot event-streaming gateway publishing real-time allocation snapshots via Apache Kafka and AWS Kinesis, containerized on AWS EKS.</p>
-                        <div class="project-tech">
-                            <span>Java</span><span>Spring Boot</span><span>Kafka</span><span>AWS Kinesis</span>
-                        </div>
-                        <div class="project-metrics">
-                            <div class="metric"><i class="fas fa-clock"></i> Real-time</div>
-                            <div class="metric"><i class="fab fa-docker"></i> Containerized</div>
-                        </div>
-                    </div>
+                <div class="project-card anim-reveal">
+                    <div class="project-top"><div class="project-icon"><i class="fas fa-satellite-dish"></i></div><span class="project-tag">Streaming</span></div>
+                    <h3>Real-Time Event Gateway</h3>
+                    <p>Java/Spring Boot event-streaming gateway publishing real-time allocation snapshots via Apache Kafka and AWS Kinesis on EKS.</p>
+                    <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>Kafka</span><span>AWS Kinesis</span></div>
+                    <div class="project-stats"><div class="pstat"><i class="fas fa-clock"></i> Real-time</div><div class="pstat"><i class="fab fa-docker"></i> Containerized</div></div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ SKILLS ============ -->
+        <!-- ========== SKILLS ========== -->
         <section id="skills" class="section">
-            <div class="section-header scroll-reveal">
-                <span class="section-number">04.</span>
-                <h2 class="section-title">Technical Arsenal</h2>
+            <div class="section-header anim-reveal">
+                <span class="section-num">04.</span>
+                <h2>Technical Arsenal</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="skills-showcase">
-                <div class="skill-category scroll-reveal">
-                    <div class="skill-cat-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Languages</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><span class="skill-name">Java</span><div class="skill-bar"><div class="skill-fill" data-level="95"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" data-level="90"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">Go</span><div class="skill-bar"><div class="skill-fill" data-level="75"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">TypeScript</span><div class="skill-bar"><div class="skill-fill" data-level="70"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" data-level="90"></div></div></div>
+            <div class="skills-grid">
+                <div class="skill-card anim-reveal">
+                    <div class="skill-head"><i class="fas fa-code"></i><h3>Languages</h3></div>
+                    <div class="skill-bars">
+                        <div class="sbar"><span>Java</span><div class="bar"><div class="fill" data-w="95"></div></div></div>
+                        <div class="sbar"><span>Python</span><div class="bar"><div class="fill" data-w="90"></div></div></div>
+                        <div class="sbar"><span>Go</span><div class="bar"><div class="fill" data-w="75"></div></div></div>
+                        <div class="sbar"><span>TypeScript</span><div class="bar"><div class="fill" data-w="70"></div></div></div>
+                        <div class="sbar"><span>SQL</span><div class="bar"><div class="fill" data-w="90"></div></div></div>
                     </div>
                 </div>
-                <div class="skill-category scroll-reveal">
-                    <div class="skill-cat-header">
-                        <i class="fas fa-server"></i>
-                        <h3>Backend & APIs</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><span class="skill-name">Spring Boot</span><div class="skill-bar"><div class="skill-fill" data-level="95"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">Django / FastAPI</span><div class="skill-bar"><div class="skill-fill" data-level="88"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">Microservices</span><div class="skill-bar"><div class="skill-fill" data-level="92"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">REST / GraphQL</span><div class="skill-bar"><div class="skill-fill" data-level="90"></div></div></div>
+                <div class="skill-card anim-reveal">
+                    <div class="skill-head"><i class="fas fa-server"></i><h3>Backend & APIs</h3></div>
+                    <div class="skill-bars">
+                        <div class="sbar"><span>Spring Boot</span><div class="bar"><div class="fill" data-w="95"></div></div></div>
+                        <div class="sbar"><span>Django / FastAPI</span><div class="bar"><div class="fill" data-w="88"></div></div></div>
+                        <div class="sbar"><span>Microservices</span><div class="bar"><div class="fill" data-w="92"></div></div></div>
+                        <div class="sbar"><span>REST / GraphQL</span><div class="bar"><div class="fill" data-w="90"></div></div></div>
                     </div>
                 </div>
-                <div class="skill-category scroll-reveal">
-                    <div class="skill-cat-header">
-                        <i class="fas fa-cloud"></i>
-                        <h3>Cloud & DevOps</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><span class="skill-name">AWS</span><div class="skill-bar"><div class="skill-fill" data-level="90"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">Docker / K8s</span><div class="skill-bar"><div class="skill-fill" data-level="85"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">CI/CD</span><div class="skill-bar"><div class="skill-fill" data-level="82"></div></div></div>
+                <div class="skill-card anim-reveal">
+                    <div class="skill-head"><i class="fas fa-cloud"></i><h3>Cloud & DevOps</h3></div>
+                    <div class="skill-bars">
+                        <div class="sbar"><span>AWS</span><div class="bar"><div class="fill" data-w="90"></div></div></div>
+                        <div class="sbar"><span>Docker / K8s</span><div class="bar"><div class="fill" data-w="85"></div></div></div>
+                        <div class="sbar"><span>CI/CD</span><div class="bar"><div class="fill" data-w="82"></div></div></div>
                     </div>
                 </div>
-                <div class="skill-category scroll-reveal">
-                    <div class="skill-cat-header">
-                        <i class="fas fa-database"></i>
-                        <h3>Databases & Streaming</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><span class="skill-name">PostgreSQL / PostGIS</span><div class="skill-bar"><div class="skill-fill" data-level="92"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">Redis</span><div class="skill-bar"><div class="skill-fill" data-level="88"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">DynamoDB / MongoDB</span><div class="skill-bar"><div class="skill-fill" data-level="82"></div></div></div>
-                        <div class="skill-item"><span class="skill-name">Kafka / Kinesis</span><div class="skill-bar"><div class="skill-fill" data-level="85"></div></div></div>
+                <div class="skill-card anim-reveal">
+                    <div class="skill-head"><i class="fas fa-database"></i><h3>Data & Streaming</h3></div>
+                    <div class="skill-bars">
+                        <div class="sbar"><span>PostgreSQL</span><div class="bar"><div class="fill" data-w="92"></div></div></div>
+                        <div class="sbar"><span>Redis</span><div class="bar"><div class="fill" data-w="88"></div></div></div>
+                        <div class="sbar"><span>DynamoDB</span><div class="bar"><div class="fill" data-w="82"></div></div></div>
+                        <div class="sbar"><span>Kafka / Kinesis</span><div class="bar"><div class="fill" data-w="85"></div></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ ACHIEVEMENTS ============ -->
+        <!-- ========== ACHIEVEMENTS ========== -->
         <section id="achievements" class="section">
-            <div class="section-header scroll-reveal">
-                <span class="section-number">05.</span>
-                <h2 class="section-title">Achievements</h2>
+            <div class="section-header anim-reveal">
+                <span class="section-num">05.</span>
+                <h2>Achievements</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="achievements-grid">
-                <div class="achievement-card scroll-reveal">
-                    <div class="achievement-icon"><i class="fab fa-aws"></i></div>
-                    <h4>AWS Solutions Architect</h4>
-                    <p>Certified Associate</p>
-                </div>
-                <div class="achievement-card scroll-reveal">
-                    <div class="achievement-icon"><i class="fas fa-database"></i></div>
-                    <h4>MongoDB Developer</h4>
-                    <p>Associate Certified</p>
-                </div>
-                <div class="achievement-card scroll-reveal">
-                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
-                    <h4>Gen-AI Hackathon</h4>
-                    <p>Runner-Up — Google × Delhivery</p>
-                </div>
-                <div class="achievement-card scroll-reveal">
-                    <div class="achievement-icon"><i class="fas fa-ranking-star"></i></div>
-                    <h4>ACPC AIR 24</h4>
-                    <p>All-India Rank 24 — Gujarat</p>
-                </div>
-                <div class="achievement-card scroll-reveal">
-                    <div class="achievement-icon"><i class="fas fa-file-lines"></i></div>
-                    <h4>IEEE Publication</h4>
-                    <p>Co-authored MESFET research</p>
-                </div>
-                <div class="achievement-card scroll-reveal">
-                    <div class="achievement-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h4>Competitive Coder</h4>
-                    <p>Active on Codeforces & LeetCode</p>
+            <div class="ach-grid">
+                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fab fa-aws"></i></div><h4>AWS SA Certified</h4><p>Solutions Architect Associate</p></div>
+                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-database"></i></div><h4>MongoDB Certified</h4><p>Developer Associate</p></div>
+                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-trophy"></i></div><h4>Gen-AI Hackathon</h4><p>Runner-Up — Google × Delhivery</p></div>
+                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-ranking-star"></i></div><h4>ACPC AIR 24</h4><p>All-India Rank 24 — Gujarat</p></div>
+                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-file-lines"></i></div><h4>IEEE Publication</h4><p>Co-authored MESFET research</p></div>
+                <div class="ach-card anim-reveal"><div class="ach-icon"><i class="fas fa-laptop-code"></i></div><h4>Competitive Coder</h4><p>Active on CF &amp; LeetCode</p></div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT ========== -->
+        <section id="contact" class="section">
+            <div class="section-header anim-reveal">
+                <span class="section-num">06.</span>
+                <h2>Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-box anim-reveal">
+                <h3>Let's Build Something Great Together</h3>
+                <p>Currently open to new opportunities in distributed systems and backend engineering. My inbox is always open.</p>
+                <div class="contact-grid">
+                    <a href="mailto:devalsonani333@gmail.com" class="ccard"><i class="fas fa-envelope"></i><span class="cl">Email</span><span class="cv">devalsonani333@gmail.com</span></a>
+                    <a href="tel:+919033633675" class="ccard"><i class="fas fa-phone"></i><span class="cl">Phone</span><span class="cv">+91-9033633675</span></a>
+                    <a href="https://www.linkedin.com/in/deval-sonani-290263196/" target="_blank" class="ccard"><i class="fab fa-linkedin"></i><span class="cl">LinkedIn</span><span class="cv">Connect with me</span></a>
+                    <a href="https://github.com/dsonani-godaddy" target="_blank" class="ccard"><i class="fab fa-github"></i><span class="cl">GitHub</span><span class="cv">View my code</span></a>
                 </div>
             </div>
         </section>
 
-        <!-- ============ CONTACT ============ -->
-        <section id="contact" class="section">
-            <div class="section-header scroll-reveal">
-                <span class="section-number">06.</span>
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="contact-wrapper scroll-reveal">
-                <div class="contact-hero">
-                    <h3>Let's Build Something Great Together</h3>
-                    <p>I'm currently open to new opportunities in distributed systems and backend engineering. Whether you have a question, a project idea, or just want to say hi — my inbox is always open.</p>
-                </div>
-                <div class="contact-cards">
-                    <a href="mailto:devalsonani333@gmail.com" class="contact-card-item">
-                        <i class="fas fa-envelope"></i>
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">devalsonani333@gmail.com</span>
-                    </a>
-                    <a href="tel:+919033633675" class="contact-card-item">
-                        <i class="fas fa-phone"></i>
-                        <span class="contact-label">Phone</span>
-                        <span class="contact-value">+91-9033633675</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/deval-sonani-290263196/" target="_blank" class="contact-card-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span class="contact-label">LinkedIn</span>
-                        <span class="contact-value">Connect with me</span>
-                    </a>
-                    <a href="https://github.com/dsonani-godaddy" target="_blank" class="contact-card-item">
-                        <i class="fab fa-github"></i>
-                        <span class="contact-label">GitHub</span>
-                        <span class="contact-value">View my code</span>
-                    </a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>Designed & Built by <strong>Deval Sonani</strong></p>
+        <div class="footer-inner">
             <div class="footer-social">
                 <a href="https://www.linkedin.com/in/deval-sonani-290263196/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/dsonani-godaddy" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="mailto:devalsonani333@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="footer-copy">© 2026 All Rights Reserved</p>
+            <p>Designed &amp; Built by <strong>Deval Sonani</strong> &copy; 2026</p>
         </div>
     </footer>
 
