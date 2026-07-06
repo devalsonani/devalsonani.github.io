@@ -265,6 +265,9 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
     transform: scale(1.2);
     border-radius: 4px;
 }
+.tl-logo-real img.delhivery-img {
+    transform: scale(1.6);
+}
 .tl-head h3 {
     font-size: 1.2rem;
     color: var(--text);
