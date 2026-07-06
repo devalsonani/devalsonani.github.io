@@ -545,9 +545,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
     z-index: 10;
 }
 
-.floating-icon {
-    background: #FFFFFF;
-}
+
 
 #particles {
     opacity: 0.2;
@@ -624,11 +622,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
 }
 
 /* Invert black icons in Dark Mode for visibility */
-[data-theme="dark"] i[class*="devicon-github"],
+[data-theme="dark"] i[class*="devicon-amazonwebservices"],
+[data-theme="dark"] i[class*="devicon-apachekafka"],
+[data-theme="dark"] i[class*="devicon-linux"],
+[data-theme="dark"] i[class*="devicon-django"],
+[data-theme="dark"] i[class*="devicon-github"] {
+    filter: brightness(0) invert(1) !important;
+}
 [data-theme="dark"] i[class*="devicon-nextjs"],
-[data-theme="dark"] i[class*="devicon-express"],
-[data-theme="dark"] .exp-tech i[class*="devicon-amazonwebservices"],
-[data-theme="dark"] .project-tech i[class*="devicon-amazonwebservices"] {
+[data-theme="dark"] i[class*="devicon-express"]{
     filter: invert(1);
 }
 
