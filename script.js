@@ -299,7 +299,7 @@
 
 
 // Mouse Glow Spotlight Effect
-document.getElementById("cards")?.onmousemove = e => {
+window.addEventListener('mousemove', e => {
   for(const card of document.getElementsByClassName("glow-card")) {
     const rect = card.getBoundingClientRect(),
           x = e.clientX - rect.left,
@@ -307,9 +307,7 @@ document.getElementById("cards")?.onmousemove = e => {
 
     card.style.setProperty("--mouse-x", `${x}px`);
     card.style.setProperty("--mouse-y", `${y}px`);
-  };
-}
-window.addEventListener('mousemove', (e) => {
-    document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
-    document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+  }
+  document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+  document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
 });
