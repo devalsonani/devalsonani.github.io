@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deval Sonani | Senior Software Engineer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-mesh"></div>
+    
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="#home" class="logo">DS.</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content scroll-reveal">
+                <p class="greeting">Hi, my name is</p>
+                <h1 class="name">Deval Sonani.</h1>
+                <h2 class="title">I build robust distributed systems.</h2>
+                <p class="summary">
+                    I'm a Senior Software Engineer with a passion for designing scalable backend architectures, 
+                    optimizing data-intensive platforms, and leading cross-functional engineering efforts. 
+                    From routing 100K+ daily logistics packages to processing 10M+ daily subscription events.
+                </p>
+                <div class="hero-cta">
+                    <a href="#experience" class="btn btn-primary">View Experience</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title scroll-reveal">Professional Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <h3>Senior Software Engineer</h3>
+                            <span class="company"><i class="fas fa-building"></i> GoDaddy</span>
+                        </div>
+                        <p class="date"><i class="far fa-calendar-alt"></i> Mar 2025 – Present</p>
+                        <ul class="task-list">
+                            <li>Architected a multi-region Auto-Renewal System handling 10M+ daily transactions using Java 21 and AWS.</li>
+                            <li>Modernized legacy C++ billing platforms into scalable Spring Boot microservices.</li>
+                            <li>Built high-performance asynchronous event sync workers in Vert.x, cutting lookup latencies by 40%.</li>
+                            <li>Developed an NLP pipeline using Gemini LLM and ChromaDB for semantic classification of declination logs.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <h3>Senior Software Engineer</h3>
+                            <span class="company"><i class="fas fa-car"></i> Cars24</span>
+                        </div>
+                        <p class="date"><i class="far fa-calendar-alt"></i> Mar 2024 – Mar 2025</p>
+                        <ul class="task-list">
+                            <li>Decomposed a legacy HRMS monolith into highly scalable microservices, reducing AWS infrastructure costs by 25%.</li>
+                            <li>Optimized hierarchical database queries using PostgreSQL Closure Tables and Redis, slashing latency from 4.2s to 35ms.</li>
+                            <li>Delivered a high-concurrency real-time notification gateway in Go (Golang) enabling sub-second alerts for 10,000+ employees.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <h3>Software Engineer</h3>
+                            <span class="company"><i class="fas fa-truck"></i> Delhivery</span>
+                        </div>
+                        <p class="date"><i class="far fa-calendar-alt"></i> Jan 2022 – Mar 2024</p>
+                        <ul class="task-list">
+                            <li>Designed the core last-mile load-allocation engine using Django and Gurobi MILP, routing 100k+ packages daily.</li>
+                            <li>Implemented Uber H3 spatial indexing for dispatch territories, improving last-mile fleet utilisation by 25%.</li>
+                            <li>Built ETL pipelines in PySpark/Databricks and deployed XGBoost models for fleet capacity prediction with 88% accuracy.</li>
+                            <li>Architected an event-streaming gateway for real-time allocation updates via Apache Kafka and AWS Kinesis.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title scroll-reveal">Technical Expertise</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-category glass-card scroll-reveal">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Languages</h3>
+                    <div class="tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Go (Golang)</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card scroll-reveal">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend & APIs</h3>
+                    <div class="tags">
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Microservices</span>
+                        <span class="tag">REST & GraphQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card scroll-reveal">
+                    <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud & DevOps</h3>
+                    <div class="tags">
+                        <span class="tag">AWS (ECS, EKS, EC2)</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card scroll-reveal">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>Data & Messaging</h3>
+                    <div class="tags">
+                        <span class="tag">PostgreSQL / PostGIS</span>
+                        <span class="tag">DynamoDB</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Kafka</span>
+                        <span class="tag">AWS Kinesis / SQS</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="contact-card glass-card scroll-reveal">
+                <h2>Let's Build Something Great</h2>
+                <p>Currently open to new opportunities in distributed systems and backend engineering.</p>
+                <div class="contact-links">
+                    <a href="mailto:devalsonani333@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i> devalsonani333@gmail.com
+                    </a>
+                    <a href="tel:+919033633675" class="contact-item">
+                        <i class="fas fa-phone"></i> +91-9033633675
+                    </a>
+                    <a href="https://www.linkedin.com/in/deval-sonani-290263196/" target="_blank" class="contact-item linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Designed & Built by Deval Sonani © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
