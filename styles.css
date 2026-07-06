@@ -6,20 +6,20 @@
 /* --- Variables --- */
 
 :root {
-    --bg: #030712; /* Deep midnight */
-    --bg2: #111827; /* Elevated card */
-    --text: #F8FAFC;
-    --text2: #94A3B8;
-    --text-muted: #64748B;
-    --accent: #00E5FF;
-    --accent2: #B100FF;
-    --grad: linear-gradient(135deg, #00E5FF 0%, #B100FF 100%);
-    --glass: #0F172A; /* Slate cards */
-    --glass-hover: #1E293B;
-    --border: #334155; /* Visible clean borders */
-    --border2: rgba(0, 229, 255, 0.4);
-    --shadow: 0 10px 30px rgba(0,0,0,0.5);
-    --shadow-glow: 0 0 25px rgba(0, 229, 255, 0.15);
+    --bg: #050505; /* Deep slate/black */
+    --bg2: #0A0A0A; /* Elevated card */
+    --text: #FAFAFA;
+    --text2: #A1A1AA;
+    --text-muted: #71717A;
+    --accent: #00F0FF;
+    --accent2: #FF007F;
+    --grad: linear-gradient(135deg, #00F0FF 0%, #7000FF 50%, #FF007F 100%);
+    --glass: rgba(15, 23, 42, 0.4); /* Glassmorphism slate */
+    --glass-hover: rgba(30, 41, 59, 0.6);
+    --border: rgba(255, 255, 255, 0.08); /* Minimal borders */
+    --border2: rgba(0, 240, 255, 0.4);
+    --shadow: 0 10px 40px rgba(0,0,0,0.7);
+    --shadow-glow: 0 0 30px rgba(0, 240, 255, 0.2);
 
     --fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     --med: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -27,7 +27,7 @@
     --font: 'Inter', -apple-system, sans-serif;
     --font-heading: 'Outfit', sans-serif;
     --mono: 'JetBrains Mono', monospace;
-    --r: 20px;
+    --r: 24px; /* Slightly larger border radius for premium feel */
 }
 
 /* --- Reset --- */
@@ -78,7 +78,7 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 
 .section-header{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;}
 .section-num{font-family:var(--mono);font-size:1.2rem; line-height: 1.8;color:var(--muted);font-weight:600;}
-.section-header h2{font-size:1.8rem;font-weight:700;white-space:nowrap;color:var(--accent);}
+.section-header h2{font-family:var(--font-heading);font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;white-space:nowrap;color:var(--accent);}
 .section-line{flex:1;height:1px;background:var(--border);}
 
 /* --- HERO --- */
@@ -140,7 +140,7 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 /* --- ABOUT --- */
 /* --- BENTO GRID ABOUT --- */
 .bento-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;align-items:stretch;}
-.bento-card{position:relative;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:1.8rem;transition:var(--med);overflow:hidden;}
+.bento-card{position:relative;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:2rem;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:var(--med);overflow:hidden;}
 .bento-card::before {
     content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     border-radius: var(--r); padding: 2px;
@@ -154,12 +154,12 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 
 .bento-card:hover{border-color:var(--border2);box-shadow:0 15px 40px rgba(0,0,0,0.5); transform: translateY(-8px) scale(1.02);}
 .bento-main{grid-column:span 2;display:flex;flex-direction:column;justify-content:center;}
-.bento-main h3{font-size:1.8rem;color:var(--accent);margin-bottom:1rem;}
+.bento-main h3{font-family:var(--font-heading);font-size:2rem;font-weight:700;letter-spacing:-0.02em;color:var(--accent);margin-bottom:1rem;}
 .bento-main p{font-size:1.05rem;color:var(--text2);margin-bottom:1.5rem;line-height:1.7;}
 .bento-main p:last-child{margin-bottom:0;}
 .bento-ai{grid-column:span 1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--glass);border:1px solid var(--border);}
 .bento-ai-icon{font-size:2.2rem;color:var(--accent2);margin-bottom:0.6rem;animation:bobble 3s ease-in-out infinite;}
-.bento-ai h4{font-size:1.2rem;color:var(--text);margin-bottom:0.8rem;}
+.bento-ai h4{font-family:var(--font-heading);font-size:1.3rem;font-weight:600;letter-spacing:-0.01em;color:var(--text);margin-bottom:0.8rem;}
 .bento-ai p{font-size:0.9rem;color:var(--text2);}
 .bento-terminal{grid-column:span 2;padding:0;}
 .bento-stats{grid-column:span 1;display:flex;flex-direction:column;justify-content:center;}
@@ -458,20 +458,20 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
 
 /* Light Theme Variables */
 [data-theme="light"] {
-    --bg: #F3F4F6;
-    --bg2: #E5E7EB;
-    --text: #111827;
-    --text2: #4B5563;
-    --muted: #6B7280;
-    --accent: #0066FF;
-    --accent2: #8B5CF6;
-    --grad: linear-gradient(135deg, #0066FF 0%, #8B5CF6 100%);
-    --glass: #FFFFFF;
-    --glass-hover: #F9FAFB;
-    --border: #E5E7EB;
-    --border2: #D1D5DB;
-    --shadow: 0 4px 15px rgba(0,0,0,0.03);
-    --shadow-glow: 0 8px 30px rgba(0, 102, 255, 0.08);
+    --bg: #FAFAFA;
+    --bg2: #F4F4F5;
+    --text: #09090B;
+    --text2: #52525B;
+    --muted: #71717A;
+    --accent: #0070F3;
+    --accent2: #FF0080;
+    --grad: linear-gradient(135deg, #0070F3 0%, #FF0080 100%);
+    --glass: rgba(255, 255, 255, 0.7);
+    --glass-hover: rgba(255, 255, 255, 0.9);
+    --border: rgba(0, 0, 0, 0.08);
+    --border2: rgba(0, 112, 243, 0.3);
+    --shadow: 0 10px 30px rgba(0,0,0,0.05);
+    --shadow-glow: 0 10px 40px rgba(0, 112, 243, 0.12);
 }
 
 

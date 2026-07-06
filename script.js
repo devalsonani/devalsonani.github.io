@@ -125,10 +125,17 @@
     // ---- SCROLL REVEALS ----
     var reveals = document.querySelectorAll('.anim-reveal');
     var revealObs = new IntersectionObserver(function (entries) {
+        var delay = 0;
         entries.forEach(function (e) {
-            if (e.isIntersecting) e.target.classList.add('visible');
+            if (e.isIntersecting) {
+                setTimeout(function() {
+                    e.target.classList.add('visible');
+                }, delay);
+                delay += 120; // Stagger effect
+                revealObs.unobserve(e.target); // Only reveal once
+            }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(function (el) { revealObs.observe(el); });
 
     // ---- SCROLL PROGRESS BAR ----
@@ -195,8 +202,9 @@
             navbar.classList.remove('scrolled');
         }
         var cur = '';
+        var scrollPos = window.scrollY + (window.innerHeight / 3);
         sections.forEach(function (sec) {
-            if (window.scrollY >= sec.offsetTop - 120) {
+            if (scrollPos >= sec.offsetTop) {
                 cur = sec.getAttribute('id');
             }
         });
