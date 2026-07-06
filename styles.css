@@ -670,3 +670,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
 .sober-toggle.expanded:hover i {
     transform: rotate(180deg) translateY(-3px);
 }
+
+/* Invert black icons in Dark Mode for visibility */
+[data-theme="dark"] i[class*="devicon-github"],
+[data-theme="dark"] i[class*="devicon-nextjs"],
+[data-theme="dark"] i[class*="devicon-express"] {
+    filter: invert(1);
+}
