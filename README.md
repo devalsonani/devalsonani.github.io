@@ -6,7 +6,7 @@ This is a high-performance, fully responsive, glassmorphism-themed personal webs
 
 ## 🚀 Live Demo
 
-**[View the Live Portfolio](https://devil3101.github.io/)**
+**[View the Live Portfolio](https://devalsonani.github.io/)**
 
 ## ✨ Features
 
