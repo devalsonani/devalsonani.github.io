@@ -513,9 +513,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
     --shadow-glow: 0 8px 30px rgba(0, 102, 255, 0.08);
 }
 
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-}
+
 
 .hero-name {
     background: linear-gradient(270deg, #0066FF, #8B5CF6, #0ea5e9, #0066FF);
@@ -762,4 +760,25 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
     .trophy-card:hover .trophy-content {
         transform: translateY(-5px);
     }
+}
+
+[data-theme="light"] .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .nav-link {
+    color: var(--text);
+    font-weight: 600;
+}
+
+[data-theme="light"] .resume-btn {
+    border: 1px solid var(--text);
+    background: transparent;
+    color: var(--text) !important;
+}
+
+[data-theme="light"] .resume-btn:hover {
+    background: var(--text);
+    color: var(--bg) !important;
 }
