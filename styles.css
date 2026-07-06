@@ -458,7 +458,7 @@ footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);
     .nav-links.open{right:0;}
     .hamburger{display:flex;}
     .projects-grid{grid-template-columns:1fr;}
-    .ach-grid{grid-template-columns:repeat(2,1fr);}
+    .ach-grid{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr;}
     .scroll-indicator{display:none;}
     .hero-cta{flex-direction:column;align-items:center;}
