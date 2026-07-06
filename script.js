@@ -182,41 +182,7 @@
     }, { threshold: 0.2 });
     skillCards.forEach(function (c) { skillObs.observe(c); });
 
-    // ---- EXPERIENCE TABS ----
-    var tabs = document.querySelectorAll('.exp-tab');
-    var panels = document.querySelectorAll('.exp-panel');
-    var slider = document.getElementById('tabSlider');
 
-    function activateTab(tab) {
-        tabs.forEach(function (t) { t.classList.remove('active'); });
-        panels.forEach(function (p) { p.classList.remove('active'); });
-        tab.classList.add('active');
-        var panel = document.getElementById(tab.getAttribute('data-target'));
-        if (panel) panel.classList.add('active');
-        // Move slider
-        if (slider) {
-            var isVert = window.innerWidth > 900;
-            if (isVert) {
-                slider.style.top = tab.offsetTop + 'px';
-                slider.style.height = tab.offsetHeight + 'px';
-                slider.style.left = '-2px';
-                slider.style.width = '2px';
-            } else {
-                slider.style.left = tab.offsetLeft + 'px';
-                slider.style.width = tab.offsetWidth + 'px';
-                slider.style.top = '';
-                slider.style.height = '2px';
-                slider.style.bottom = '-2px';
-            }
-        }
-    }
-
-    tabs.forEach(function (tab) {
-        tab.addEventListener('click', function () { activateTab(tab); });
-    });
-    // Init slider position
-    var firstTab = document.querySelector('.exp-tab.active');
-    if (firstTab) setTimeout(function () { activateTab(firstTab); }, 150);
 
     // ---- NAVBAR SCROLL ----
     var navbar = document.getElementById('navbar');

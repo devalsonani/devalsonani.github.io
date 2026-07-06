@@ -133,76 +133,68 @@
                 <h2>Experience</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="exp-container anim-reveal">
-                <div class="exp-tabs">
-                    <div class="tab-slider" id="tabSlider"></div>
-                    <button class="exp-tab active" data-target="exp-1">
-                        <img src="assets/godaddy.png" alt="GoDaddy" class="tab-logo">
-                        GoDaddy
-                    </button>
-                    <button class="exp-tab" data-target="exp-2">
-                        <img src="assets/cars24.png" alt="Cars24" class="tab-logo">
-                        Cars24
-                    </button>
-                    <button class="exp-tab" data-target="exp-3">
-                        <img src="assets/delhivery.png" alt="Delhivery" class="tab-logo">
-                        Delhivery
-                    </button>
+            <div class="timeline">
+                <!-- GoDaddy -->
+                <div class="tl-item anim-reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-head">
+                            <img src="assets/godaddy.png" alt="GoDaddy" class="tl-logo">
+                            <div>
+                                <h3>SDE II <span class="accent">@ GoDaddy</span></h3>
+                                <p class="tl-meta">Mar 2025 — Present &bull; Pune, India</p>
+                            </div>
+                        </div>
+                        <ul class="tl-list">
+                            <li>Designed HLD/LLD for a multi-region <strong>Auto-Renewal System</strong> processing <strong>10M+ daily transactions</strong> using Java 21 and AWS SQS.</li>
+                            <li>Migrated legacy COM+ C++ billing into a <strong>Spring Boot 3.x</strong> microservice, automating failed card retry flows.</li>
+                            <li>Built async event sync in <strong>Vert.x</strong> streaming MySQL → <strong>Couchbase</strong> read-replica on AWS ECS, cutting latencies by 40%.</li>
+                            <li>Built NLP classification pipeline using <strong>Gemini LLM</strong> + <strong>ChromaDB</strong> vectors to categorize payment declination logs.</li>
+                            <li>Introduced <strong>ArchUnit</strong> tests and dockerized <strong>Testcontainers</strong>, raising test coverage by 15%.</li>
+                        </ul>
+                        <div class="tl-tags"><span><i class="devicon-java-plain colored"></i> Java 21</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> DynamoDB</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS SQS</span><span><i class="devicon-java-plain colored"></i> Vert.x</span><span><i class="devicon-couchbase-plain colored"></i> Couchbase</span></div>
+                    </div>
                 </div>
-                <div class="exp-panels">
-                    <div class="exp-panel glow-card active" id="exp-1">
-                        <div class="exp-header">
-                            <img src="assets/godaddy.png" alt="GoDaddy" class="panel-logo">
-                            <h3>Software Development Engineer II (SDE2) <span class="accent">@ GoDaddy</span></h3>
+                <!-- Cars24 -->
+                <div class="tl-item anim-reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-head">
+                            <img src="assets/cars24.png" alt="Cars24" class="tl-logo">
+                            <div>
+                                <h3>SDE II <span class="accent">@ Cars24</span></h3>
+                                <p class="tl-meta">Mar 2024 — Mar 2025 &bull; Gurugram, India</p>
+                            </div>
                         </div>
-                        <p class="exp-meta">Mar 2025 — Present &bull; Remote – Pune, India</p>
-                        <div class="exp-content-wrapper">
-                            <ul>
-                            <li>Designed and authored the HLD/LLD for a multi-region <strong>Auto-Renewal System (ARS)</strong> processing <strong>10M+ daily transactions</strong> using Java 21 and AWS SQS.</li>
-                            <li>Led the migration of legacy Windows COM+ C++ billing components into a modern <strong>Spring Boot 3.x</strong> microservice, automating failed card retry flows.</li>
-                            <li>Built an asynchronous event sync worker in <strong>Vert.x</strong> to stream MySQL data into a <strong>Couchbase</strong> read-replica cluster on AWS ECS, cutting latencies by 40%.</li>
-                            <li>Developed an NLP classification pipeline using <strong>Gemini LLM</strong> and <strong>ChromaDB</strong> vector embeddings to categorize payment declination logs.</li>
-                            <li>Elevated engineering standards by introducing <strong>ArchUnit</strong> architectural tests and dockerized <strong>Testcontainers</strong>, raising test coverage by 15%.</li>
+                        <ul class="tl-list">
+                            <li>Led a team of 8 engineers; architected an enterprise HRMS on <strong>Java/Spring Boot</strong> on <strong>AWS ECS</strong> + <strong>RDS</strong>.</li>
+                            <li>Decomposed legacy monolith into microservices, reducing AWS costs by <strong>25%</strong>.</li>
+                            <li>Designed org-hierarchy data model (Closure Table + <strong>Redis</strong> caching), accelerating queries from 4.2s → 35ms.</li>
+                            <li>Automated payroll workflows, saving finance team 20% reconciliation time.</li>
+                            <li>Built real-time notification gateway in <strong>Go</strong> with goroutines + WebSockets for 10,000+ employees.</li>
                         </ul>
-                        </div>
-                        
-                        <div class="exp-tech"><span><i class="devicon-java-plain colored"></i> Java 21</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> DynamoDB</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS SQS</span><span><i class="devicon-java-plain colored"></i> Vert.x</span><span><i class="devicon-couchbase-plain colored"></i> Couchbase</span></div>
+                        <div class="tl-tags"><span><i class="devicon-java-plain colored"></i> Java</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span><span><i class="devicon-redis-plain colored"></i> Redis</span><span><i class="devicon-go-plain colored"></i> Go</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS ECS</span></div>
                     </div>
-                    <div class="exp-panel glow-card" id="exp-2">
-                        <div class="exp-header">
-                            <img src="assets/cars24.png" alt="Cars24" class="panel-logo">
-                            <h3>Software Development Engineer II (SDE2) <span class="accent">@ Cars24</span></h3>
+                </div>
+                <!-- Delhivery -->
+                <div class="tl-item anim-reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-head">
+                            <img src="assets/delhivery.png" alt="Delhivery" class="tl-logo">
+                            <div>
+                                <h3>SDE I <span class="accent">@ Delhivery</span></h3>
+                                <p class="tl-meta">Jan 2022 — Mar 2024 &bull; Gurugram, India</p>
+                            </div>
                         </div>
-                        <p class="exp-meta">Mar 2024 — Mar 2025 &bull; Gurugram, India</p>
-                        <div class="exp-content-wrapper">
-                            <ul>
-                            <li>Served as senior engineer for a team of 8; drove the architecture and delivery of a new enterprise HRMS platform built on Java/Spring Boot on <strong>AWS ECS</strong> and <strong>AWS RDS</strong>.</li>
-                            <li>Decomposed a tightly coupled legacy monolith into independently deployable microservices, reducing AWS infrastructure costs by <strong>25%</strong>.</li>
-                            <li>Designed the organizational hierarchy data model using the Closure Table pattern in PostgreSQL with multi-level <strong>Redis</strong> caching, accelerating queries from 4.2s to 35ms.</li>
-                            <li>Communicated system architecture and tradeoffs directly to C-suite stakeholders; automated payroll data workflows saving the finance team 20% reconciliation time.</li>
-                            <li>Delivered a high-concurrency real-time notification gateway in <strong>Go (Golang)</strong> using goroutines and WebSockets, enabling instant alerts to 10,000+ employees.</li>
+                        <ul class="tl-list">
+                            <li>Built <strong>Flare</strong>, core last-mile allocation engine handling <strong>100k+ packages/day</strong> across 500+ centers.</li>
+                            <li>Built VRP layer with <strong>Uber H3</strong> spatial indexing for auto-dispatch territories, improving utilisation by 25%.</li>
+                            <li>Tuned <strong>PostGIS</strong> spatial indexes, cutting geographic lookup latency by 50%.</li>
+                            <li>Architected event-streaming gateway via <strong>Kafka</strong> + <strong>AWS Kinesis</strong> for real-time allocation updates.</li>
+                            <li>Built ETL pipelines in <strong>Databricks (PySpark)</strong> processing TB-scale GPS logs; deployed XGBoost models with 88% accuracy.</li>
                         </ul>
-                        </div>
-                        
-                        <div class="exp-tech"><span><i class="devicon-java-plain colored"></i> Java</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span><span><i class="devicon-redis-plain colored"></i> Redis</span><span><i class="devicon-go-plain colored"></i> Go</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS ECS</span></div>
-                    </div>
-                    <div class="exp-panel glow-card" id="exp-3">
-                        <div class="exp-header">
-                            <img src="assets/delhivery.png" alt="Delhivery" class="panel-logo">
-                            <h3>Software Development Engineer I (SDE1) <span class="accent">@ Delhivery</span></h3>
-                        </div>
-                        <p class="exp-meta">Jan 2022 — Mar 2024 &bull; Gurugram, India</p>
-                        <div class="exp-content-wrapper">
-                            <ul>
-                            <li>Designed and built <strong>Flare</strong>, Delhivery’s core last-mile load-allocation engine handling <strong>100k+ packages daily</strong> across 500+ distribution centers.</li>
-                            <li>Built a Vehicle Routing Problem (VRP) layer using <strong>Uber H3</strong> spatial indexing to auto-generate dispatch territories, improving last-mile utilisation by 25%.</li>
-                            <li>Tuned <strong>PostGIS</strong> spatial indexes and rewrote complex polygon-join queries, cutting geographic lookup latency by 50%.</li>
-                            <li>Architected a <strong>Java/Spring Boot</strong> event-streaming gateway publishing real-time allocation updates via <strong>Apache Kafka</strong> and <strong>AWS Kinesis</strong>.</li>
-                            <li>Delivered ETL pipelines in <strong>Databricks (PySpark)</strong> processing TB-scale GPS logs; trained and deployed XGBoost models for fleet capacity prediction with 88% accuracy.</li>
-                        </ul>
-                        </div>
-                        
-                        <div class="exp-tech"><span><i class="devicon-python-plain colored"></i> Python</span><span><i class="devicon-django-plain colored"></i> Django</span><span><i class="fas fa-bolt"></i> FastAPI</span><span><i class="devicon-python-plain colored"></i> Gurobi</span><span><i class="devicon-apachekafka-original colored"></i> Kafka</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS Kinesis</span></div>
+                        <div class="tl-tags"><span><i class="devicon-python-plain colored"></i> Python</span><span><i class="devicon-django-plain colored"></i> Django</span><span><i class="fas fa-bolt"></i> FastAPI</span><span><i class="devicon-python-plain colored"></i> Gurobi</span><span><i class="devicon-apachekafka-original colored"></i> Kafka</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS Kinesis</span></div>
                     </div>
                 </div>
             </div>
