@@ -92,11 +92,11 @@
     // ---- TYPING EFFECT ----
     var typedEl = document.getElementById('typedText');
     var phrases = [
-        'distributed systems.',
-        'scalable microservices.',
-        'high-throughput backends.',
-        'real-time data pipelines.',
-        'AI-powered solutions.'
+        "distributed systems.",
+        "scalable architectures.",
+        "high-throughput APIs.",
+        "great user experiences.",
+        "clean code & best practices."
     ];
     var pi = 0, ci = 0, deleting = false;
 
