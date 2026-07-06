@@ -191,7 +191,7 @@
         tabs.forEach(function (t) { t.classList.remove('active'); });
         panels.forEach(function (p) { p.classList.remove('active'); });
         tab.classList.add('active');
-        var panel = document.getElementById('panel-' + tab.getAttribute('data-tab'));
+        var panel = document.getElementById(tab.getAttribute('data-target'));
         if (panel) panel.classList.add('active');
         // Move slider
         if (slider) {
