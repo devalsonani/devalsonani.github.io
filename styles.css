@@ -87,7 +87,7 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.3)}70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 
 /* Centered Profile Photo & Floating Icons */
-.profile-container{position:relative;margin:1rem auto 1rem;width:280px;height:280px;}
+.profile-container{position:relative;margin:3.5rem auto 1.5rem;width:280px;height:280px;}
 .profile-frame{position:relative;width:100%;height:100%;z-index:2;}
 .profile-img{width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%;position:relative;z-index:2;border:2px solid var(--border);transition:var(--med);}
 .profile-container:hover .profile-img { transform: scale(1.08); border-color: var(--accent); }
@@ -103,7 +103,8 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 @keyframes floatOrbit{0%{transform:translateY(0px) rotate(0deg);}100%{transform:translateY(-15px) rotate(5deg);}}
 
 .hero-greeting{font-family:var(--mono);font-size:1.2rem; line-height: 1.8;color:var(--text2);margin-bottom:-0.8rem;letter-spacing:1px;margin-top:1rem;}
-.hero-name{font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1.1;margin-bottom:0;background:linear-gradient(135deg,#ffffff,#777777);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-name{font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1.1;margin-bottom:0;background:linear-gradient(270deg, #06b6d4, #8b5cf6, #3b82f6, #06b6d4);background-size: 300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation: gradientText 6s ease infinite;}
+@keyframes gradientText { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 .dot{-webkit-text-fill-color:var(--accent);}
 .hero-typed{font-size:clamp(1.2rem,2.5vw,1.8rem);color:var(--text2);font-weight:600;min-height:2.2rem;}
 .typed-pre{color:var(--text2);}.typed-text{color:var(--accent);}
@@ -114,8 +115,8 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.6rem;border-radius:8px;font-weight:600;font-size:.92rem;transition:var(--med);border:none;cursor:pointer;}
-.btn-primary{background:var(--text);color:var(--bg);}
-.btn-primary:hover{background:#ffffff;transform:translateY(-3px);box-shadow:0 8px 25px rgba(255,255,255,.15);}
+.btn-primary{background:var(--text);color:var(--bg);box-shadow: 0 0 15px rgba(255,255,255,0.2); position: relative; overflow: hidden;}
+.btn-primary:hover{background:#ffffff;transform:translateY(-4px) scale(1.05);box-shadow:0 10px 30px rgba(255,255,255,0.4), 0 0 20px rgba(6,182,212,0.4);}
 .btn-primary i{transition:var(--fast);}.btn-primary:hover i{transform:translateX(4px);}
 .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2);}
 .btn-outline:hover{background:rgba(255,255,255,.05);transform:translateY(-3px);}
@@ -339,9 +340,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
 }
 
 [data-theme="light"] .hero-name {
-    background: linear-gradient(135deg, #0f172a, #334155);
+    background: linear-gradient(270deg, #2563eb, #7c3aed, #0ea5e9, #2563eb);
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: gradientText 6s ease infinite;
 }
 
 [data-theme="light"] .bento-ai {
@@ -369,4 +372,30 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
 
 [data-theme="light"] .cursor-glow {
     background: radial-gradient(circle, rgba(37,99,235,0.05) 0%, transparent 70%);
+}
+
+
+.project-card, .bento-card, .ach-card, .ccard {
+    position: relative;
+    transform-style: preserve-3d;
+}
+.project-card::after, .bento-card::after, .ach-card::after, .ccard::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: var(--r);
+    background: linear-gradient(135deg, var(--accent), var(--accent2), #3b82f6, var(--accent));
+    background-size: 300% 300%;
+    z-index: -1;
+    opacity: 0;
+    transition: var(--slow);
+}
+.project-card:hover::after, .bento-card:hover::after, .ach-card:hover::after, .ccard:hover::after {
+    opacity: 1;
+    animation: gradientBorder 3s ease infinite;
+}
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
