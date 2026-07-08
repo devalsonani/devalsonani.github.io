@@ -145,15 +145,15 @@
                             </div>
                         </div>
                         <ul class="tl-list">
-                            <li>Designed <strong>Auto-Renewal System</strong> handling <strong>10M+</strong> daily subscription events.</li>
-                            <li>Modernized legacy C++ billing platform into <strong>Spring Boot</strong> microservices.</li>
-                            <li>Built asynchronous subscription synchronization service reducing lookup latency by <strong>40%</strong>.</li>
-                            <li>Improved payment recovery using A/B experimentation and built an <strong>NLP pipeline</strong> for semantic classification of declination logs.</li>
-                            <li>Automated <strong>dunning cycle workflows</strong> for billing agents, triggering specialized payment recovery procedures and orchestrating subscription management rules.</li>
-                            <li>Enhanced subscription entitlement and purchase flows with <strong>PFID-based access control</strong>, building automated paid-to-freemium downgrades for expired payments.</li>
-                            <li>Integrated <strong>Apple and Google IAP</strong> validation with secure idempotent processing.</li>
+                            <li>Part of a cross-functional team of 15 engineers on the Subscriptions Platform; collaborated with product, billing, and mobile commerce teams to deliver renewal and dunning systems at scale.</li>
+                            <li>Contributed to the architecture and led the implementation of a multi-region <strong>Auto-Renewal System (ARS)</strong> processing <strong>10M+ daily transactions</strong> using <strong>Java 21</strong> and AWS SQS; modeled state transitions on <strong>DynamoDB Global Tables</strong> to prevent concurrent multi-region race conditions.</li>
+                            <li>Engineered an <strong>event-driven orchestration pipeline</strong> for ARS across staged AWS SQS queues, cleanly decoupling business exceptions (hard declines) from transient system failures (timeouts) to guarantee fault-tolerant payment profile cycling.</li>
+                            <li>Automated complex <strong>dunning cycle workflows</strong> and billing agent procedures, orchestrating subscription management rules to trigger targeted payment recovery flows and minimize involuntary revenue churn.</li>
+                            <li>Enhanced subscription entitlement and purchase architectures with <strong>PFID-based access control</strong>, engineering automated paid-to-freemium downgrade pipelines to enforce product compliance on expired payments.</li>
+                            <li>Built an asynchronous event sync worker in <strong>Vert.x</strong> to stream MySQL subscription data into a <strong>Couchbase</strong> read-replica cluster on <strong>AWS ECS</strong>, cutting lookup latencies by <strong>40%</strong> and improving dashboard responsiveness.</li>
+                            <li>Elevated engineering standards by introducing <strong>ArchUnit</strong> tests and constructing a comprehensive end-to-end integration testing framework using <strong>WireMock</strong> and <strong>LocalStack</strong>, boosting overall test coverage by <strong>15%</strong>.</li>
                         </ul>
-                        <div class="tl-tags"><span><i class="devicon-java-plain colored"></i> Java 21</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> DynamoDB</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS SQS</span><span><i class="devicon-java-plain colored"></i> Vert.x</span><span><i class="devicon-couchbase-plain colored"></i> Couchbase</span></div>
+                        <div class="tl-tags"><span><i class="devicon-java-plain colored"></i> Java 21</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS SQS</span><span><i class="fas fa-database"></i> DynamoDB</span><span><i class="devicon-java-plain colored"></i> Vert.x</span><span><i class="devicon-couchbase-plain colored"></i> Couchbase</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS ECS</span><span><i class="fas fa-shield-alt"></i> ArchUnit</span><span><i class="fas fa-network-wired"></i> WireMock</span></div>
                     </div>
                 </div>
                 <!-- Cars24 -->
@@ -168,13 +168,13 @@
                             </div>
                         </div>
                         <ul class="tl-list">
-                            <li>Architected a new HRMS platform by decoupling a legacy monolith into microservices, reducing infrastructure costs by <strong>25%</strong>.</li>
-                            <li>Optimized org-tree and budget-rollup queries using a <strong>PostgreSQL Closure Table</strong> pattern and <strong>Redis</strong>, reducing latency from 4.2s to 35ms.</li>
-                            <li>Secured PII data using AES-256 encryption and resolved concurrency issues using database advisory locks.</li>
-                            <li>Automated monthly payroll data flows, saving the finance team <strong>20%</strong> of their monthly reconciliation effort.</li>
-                            <li>Developed a high-concurrency real-time notification gateway in <strong>Go</strong> to dispatch asynchronous alerts to 10,000+ employees.</li>
+                            <li>Served as senior engineer for a team of 8 engineers, reporting to the VP of Engineering; drove the architecture and full-stack delivery of a new enterprise <strong>HRMS platform</strong> featuring a <strong>React</strong> frontend and a <strong>Java/Spring Boot</strong> & <strong>Python</strong> backend, deployed on <strong>GCP (GKE, Cloud SQL)</strong>.</li>
+                            <li>Decomposed a tightly coupled legacy monolith into independently deployable <strong>Java</strong> microservices, optimizing cloud resource provisioning and reducing GCP infrastructure costs by <strong>25%</strong>.</li>
+                            <li>Designed the organizational hierarchy data model using the Closure Table pattern in <strong>PostgreSQL</strong> with multi-level <strong>Redis</strong> caching, accelerating org-tree and budget-rollup queries from <strong>4.2 seconds to 35 milliseconds</strong>.</li>
+                            <li>Architected and automated complex payroll data workflows using <strong>Python</strong> and Pandas, saving the finance team <strong>20%</strong> in monthly reconciliation time while communicating system tradeoffs directly to C-suite stakeholders.</li>
+                            <li>Delivered a high-concurrency real-time notification gateway in <strong>Go (Golang)</strong> using goroutines and WebSockets, enabling instant payroll and HR alerts to <strong>10,000+ employees</strong> with sub-second delivery.</li>
                         </ul>
-                        <div class="tl-tags"><span><i class="devicon-java-plain colored"></i> Java</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span><span><i class="devicon-redis-plain colored"></i> Redis</span><span><i class="devicon-go-plain colored"></i> Go</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS ECS</span></div>
+                        <div class="tl-tags"><span><i class="devicon-react-original colored"></i> React</span><span><i class="devicon-java-plain colored"></i> Java</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-python-plain colored"></i> Python</span><span><i class="devicon-googlecloud-plain colored"></i> GCP (GKE)</span><span><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span><span><i class="devicon-redis-plain colored"></i> Redis</span><span><i class="devicon-go-plain colored"></i> Go</span></div>
                     </div>
                 </div>
                 <!-- Delhivery -->
@@ -189,12 +189,13 @@
                             </div>
                         </div>
                         <ul class="tl-list">
-                            <li>Designed <strong>Flare</strong>, the core last-mile load-allocation engine using Django and Gurobi MILP, handling 100k+ packages daily across 500+ distribution centers.</li>
-                            <li>Built a VRP layer using affinity matrices and <strong>Uber H3</strong> spatial indexing, improving last-mile fleet utilisation by 25%.</li>
-                            <li>Developed a high-concurrency <strong>FastAPI</strong> microservice with a custom C++ module for spatial polygon computation.</li>
-                            <li>Architected a <strong>Java/Spring Boot</strong> event-streaming gateway for real-time allocation updates via <strong>Kafka</strong> and AWS Kinesis.</li>
+                            <li>Designed and built <strong>Flare</strong>, Delhivery's core last-mile load-allocation engine in Django/Python, modeling driver-to-shipment assignments as a Mixed-Integer Linear Program via SCIP/Gurobi, handling <strong>100k+ packages daily</strong> across <strong>500+ distribution centers</strong> with capacity and shift constraints.</li>
+                            <li>Built a <strong>Vehicle Routing Problem (VRP)</strong> layer using affinity matrices to compute optimal delivery zones per driver; implemented <strong>Uber H3</strong> spatial indexing to auto-generate dispatch territories, improving last-mile utilisation by <strong>25%</strong>.</li>
+                            <li>Developed a high-concurrency <strong>FastAPI/asyncio</strong> microservice with a custom C/C++ compiled module for spatial polygon computation; engineered the <strong>AVTD preprocessing pipeline</strong> using Elasticsearch DSL to filter out geocoding and volumetric errors before solver ingestion.</li>
+                            <li>Architected a <strong>Java/Spring Boot</strong> event-streaming gateway publishing real-time allocation updates via <strong>Apache Kafka</strong> and <strong>AWS Kinesis</strong>; containerized and deployed services on <strong>AWS EKS</strong>.</li>
+                            <li>Authored system design wikis, onboarding documentation, and internal runbooks for the solver platform, significantly reducing ramp-up time for new engineers; placed <strong>Runner-Up</strong> at Google x Delhivery Gen-AI Hackathon for an RAG-powered logistics support agent.</li>
                         </ul>
-                        <div class="tl-tags"><span><i class="devicon-python-plain colored"></i> Python</span><span><i class="devicon-django-plain colored"></i> Django</span><span><i class="fas fa-bolt"></i> FastAPI</span><span><i class="devicon-python-plain colored"></i> Gurobi</span><span><i class="devicon-apachekafka-original colored"></i> Kafka</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS Kinesis</span></div>
+                        <div class="tl-tags"><span><i class="devicon-python-plain colored"></i> Django</span><span><i class="fas fa-bolt"></i> FastAPI</span><span><i class="devicon-cplusplus-plain colored"></i> C++</span><span><i class="devicon-elasticsearch-plain colored"></i> Elasticsearch</span><span><i class="devicon-java-plain colored"></i> Java</span><span><i class="devicon-apachekafka-original colored"></i> Kafka</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS EKS</span></div>
                     </div>
                 </div>
                 <!-- Delhivery Intern -->
@@ -209,11 +210,10 @@
                             </div>
                         </div>
                         <ul class="tl-list">
-                            <li>Tuned <strong>PostGIS</strong> spatial indexes and rewrote complex polygon-join queries, cutting geographic lookup latency by 50%.</li>
-                            <li>Delivered ETL pipelines in <strong>Databricks (PySpark)</strong> to process TB-scale GPS logs.</li>
-                            <li>Trained and deployed <strong>XGBoost</strong> models via MLflow for fleet capacity prediction with 88% accuracy.</li>
+                            <li>Tuned <strong>PostGIS</strong> spatial indexes and rewrote complex polygon-join queries, cutting geographic lookup latency by <strong>50%</strong>; automated 50GB+ daily CSV processing with Celery and stored results in <strong>AWS S3</strong> and <strong>AWS Athena</strong>.</li>
+                            <li>Delivered ETL pipelines in <strong>Databricks (PySpark)</strong> processing TB-scale GPS logs; trained and deployed <strong>XGBoost</strong> models via MLflow for fleet capacity prediction with <strong>88% accuracy</strong>.</li>
                         </ul>
-                        <div class="tl-tags"><span><i class="devicon-python-plain colored"></i> Python</span><span><i class="devicon-postgresql-plain colored"></i> PostGIS</span><span><i class="devicon-apachespark-original colored"></i> PySpark</span><span><i class="fas fa-brain"></i> XGBoost</span></div>
+                        <div class="tl-tags"><span><i class="devicon-postgresql-plain colored"></i> PostGIS</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS S3</span><span><i class="devicon-apachespark-original colored"></i> PySpark</span><span><i class="devicon-databricks-plain colored"></i> Databricks</span><span><i class="fas fa-brain"></i> XGBoost</span><span><i class="fas fa-chart-line"></i> MLflow</span></div>
                     </div>
                 </div>
             </div>
@@ -281,49 +281,58 @@
                 <div class="section-line"></div>
             </div>
             <div class="skills-clusters">
-                <!-- Cluster 1 -->
+                <!-- Cluster 1: Backend & Languages -->
                 <div class="skill-cluster anim-reveal" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <h3 class="cluster-title">Languages & Frameworks</h3>
+                    <h3 class="cluster-title">Backend & Languages</h3>
                     <div class="cluster-grid">
-                        <div class="tech-icon" title="Java 21"><i class="devicon-java-plain colored"></i></div>
+                        <div class="tech-icon" title="Java"><i class="devicon-java-plain colored"></i></div>
                         <div class="tech-icon" title="Python"><i class="devicon-python-plain colored"></i></div>
                         <div class="tech-icon" title="Go (Golang)"><i class="devicon-go-plain colored"></i></div>
                         <div class="tech-icon" title="TypeScript"><i class="devicon-typescript-plain colored"></i></div>
                         <div class="tech-icon" title="Spring Boot"><i class="devicon-spring-plain colored"></i></div>
                         <div class="tech-icon" title="FastAPI"><i class="devicon-fastapi-plain colored"></i></div>
                         <div class="tech-icon" title="Django"><i class="devicon-django-plain colored"></i></div>
+                        <div class="tech-icon" title="SQL"><i class="devicon-azuresqldatabase-plain colored"></i></div>
                     </div>
                 </div>
-                <!-- Cluster 2 -->
+                <!-- Cluster 2: Cloud & DevOps -->
                 <div class="skill-cluster anim-reveal" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <h3 class="cluster-title">Cloud & Infrastructure</h3>
+                    <h3 class="cluster-title">Cloud & DevOps</h3>
                     <div class="cluster-grid">
                         <div class="tech-icon" title="AWS"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div>
+                        <div class="tech-icon" title="GCP"><i class="devicon-googlecloud-plain colored"></i></div>
                         <div class="tech-icon" title="Docker"><i class="devicon-docker-plain colored"></i></div>
                         <div class="tech-icon" title="Kubernetes"><i class="devicon-kubernetes-plain colored"></i></div>
+                        <div class="tech-icon" title="Helm"><i class="devicon-helm-original colored"></i></div>
+                        <div class="tech-icon" title="GitHub Actions"><i class="devicon-githubactions-plain colored"></i></div>
+                        <div class="tech-icon" title="Databricks"><i class="devicon-databricks-plain colored"></i></div>
                     </div>
                 </div>
-                <!-- Cluster 3 -->
+                <!-- Cluster 3: Databases & Streaming -->
                 <div class="skill-cluster anim-reveal" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
                     <h3 class="cluster-title">Databases & Streaming</h3>
                     <div class="cluster-grid">
                         <div class="tech-icon" title="PostgreSQL"><i class="devicon-postgresql-plain colored"></i></div>
                         <div class="tech-icon" title="MongoDB"><i class="devicon-mongodb-plain colored"></i></div>
+                        <div class="tech-icon" title="DynamoDB"><i class="fas fa-database"></i></div>
                         <div class="tech-icon" title="Couchbase"><i class="devicon-couchbase-plain colored"></i></div>
                         <div class="tech-icon" title="Redis"><i class="devicon-redis-plain colored"></i></div>
+                        <div class="tech-icon" title="Elasticsearch"><i class="devicon-elasticsearch-plain colored"></i></div>
                         <div class="tech-icon" title="Apache Kafka"><i class="devicon-apachekafka-original colored"></i></div>
                     </div>
                 </div>
-                <!-- Cluster 4 -->
+                <!-- Cluster 4: Frontend & AI/ML -->
                 <div class="skill-cluster anim-reveal" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <h3 class="cluster-title">Developer Tools</h3>
+                    <h3 class="cluster-title">Frontend & AI/ML</h3>
                     <div class="cluster-grid">
-                        <div class="tech-icon" title="Git"><i class="devicon-git-plain colored"></i></div>
-                        <div class="tech-icon" title="GitHub"><i class="fab fa-github"></i></div>
-                        <div class="tech-icon" title="VS Code"><i class="devicon-vscode-plain colored"></i></div>
-                        <div class="tech-icon" title="IntelliJ IDEA"><i class="devicon-intellij-plain colored"></i></div>
-                        <div class="tech-icon" title="Postman"><i class="devicon-postman-plain colored"></i></div>
-                        <div class="tech-icon" title="Linux"><i class="devicon-linux-plain colored"></i></div>
+                        <div class="tech-icon" title="React"><i class="devicon-react-original colored"></i></div>
+                        <div class="tech-icon" title="Next.js"><i class="devicon-nextjs-plain"></i></div>
+                        <div class="tech-icon" title="Tailwind CSS"><i class="devicon-tailwindcss-original colored"></i></div>
+                        <div class="tech-icon" title="Redux"><i class="devicon-redux-original colored"></i></div>
+                        <div class="tech-icon" title="PySpark"><i class="devicon-apachespark-original colored"></i></div>
+                        <div class="tech-icon" title="Scikit-Learn"><i class="devicon-scikitlearn-plain colored"></i></div>
+                        <div class="tech-icon" title="ChromaDB"><i class="fas fa-database"></i></div>
+                        <div class="tech-icon" title="LLMs & RAG"><i class="fas fa-robot"></i></div>
                     </div>
                 </div>
             </div>
