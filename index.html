@@ -145,11 +145,13 @@
                             </div>
                         </div>
                         <ul class="tl-list">
-                            <li>Designed HLD/LLD for a multi-region <strong>Auto-Renewal System</strong> processing <strong>10M+ daily transactions</strong> using Java 21 and AWS SQS.</li>
-                            <li>Migrated legacy COM+ C++ billing into a <strong>Spring Boot 3.x</strong> microservice, automating failed card retry flows.</li>
-                            <li>Built async event sync in <strong>Vert.x</strong> streaming MySQL → <strong>Couchbase</strong> read-replica on AWS ECS, cutting latencies by 40%.</li>
-                            <li>Built NLP classification pipeline using <strong>Gemini LLM</strong> + <strong>ChromaDB</strong> vectors to categorize payment declination logs.</li>
-                            <li>Introduced <strong>ArchUnit</strong> tests and dockerized <strong>Testcontainers</strong>, raising test coverage by 15%.</li>
+                            <li>Designed <strong>Auto-Renewal System</strong> handling <strong>10M+</strong> daily subscription events.</li>
+                            <li>Modernized legacy C++ billing platform into <strong>Spring Boot</strong> microservices.</li>
+                            <li>Built asynchronous subscription synchronization service reducing lookup latency by <strong>40%</strong>.</li>
+                            <li>Improved payment recovery using A/B experimentation and built an <strong>NLP pipeline</strong> for semantic classification of declination logs.</li>
+                            <li>Automated <strong>dunning cycle workflows</strong> for billing agents, triggering specialized payment recovery procedures and orchestrating subscription management rules.</li>
+                            <li>Enhanced subscription entitlement and purchase flows with <strong>PFID-based access control</strong>, building automated paid-to-freemium downgrades for expired payments.</li>
+                            <li>Integrated <strong>Apple and Google IAP</strong> validation with secure idempotent processing.</li>
                         </ul>
                         <div class="tl-tags"><span><i class="devicon-java-plain colored"></i> Java 21</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> DynamoDB</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS SQS</span><span><i class="devicon-java-plain colored"></i> Vert.x</span><span><i class="devicon-couchbase-plain colored"></i> Couchbase</span></div>
                     </div>
@@ -166,11 +168,11 @@
                             </div>
                         </div>
                         <ul class="tl-list">
-                            <li>Led a team of 8 engineers; architected an enterprise HRMS on <strong>Java/Spring Boot</strong> on <strong>AWS ECS</strong> + <strong>RDS</strong>.</li>
-                            <li>Decomposed legacy monolith into microservices, reducing AWS costs by <strong>25%</strong>.</li>
-                            <li>Designed org-hierarchy data model (Closure Table + <strong>Redis</strong> caching), accelerating queries from 4.2s → 35ms.</li>
-                            <li>Automated payroll workflows, saving finance team 20% reconciliation time.</li>
-                            <li>Built real-time notification gateway in <strong>Go</strong> with goroutines + WebSockets for 10,000+ employees.</li>
+                            <li>Architected a new HRMS platform by decoupling a legacy monolith into microservices, reducing infrastructure costs by <strong>25%</strong>.</li>
+                            <li>Optimized org-tree and budget-rollup queries using a <strong>PostgreSQL Closure Table</strong> pattern and <strong>Redis</strong>, reducing latency from 4.2s to 35ms.</li>
+                            <li>Secured PII data using AES-256 encryption and resolved concurrency issues using database advisory locks.</li>
+                            <li>Automated monthly payroll data flows, saving the finance team <strong>20%</strong> of their monthly reconciliation effort.</li>
+                            <li>Developed a high-concurrency real-time notification gateway in <strong>Go</strong> to dispatch asynchronous alerts to 10,000+ employees.</li>
                         </ul>
                         <div class="tl-tags"><span><i class="devicon-java-plain colored"></i> Java</span><span><i class="devicon-spring-plain colored"></i> Spring Boot</span><span><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span><span><i class="devicon-redis-plain colored"></i> Redis</span><span><i class="devicon-go-plain colored"></i> Go</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS ECS</span></div>
                     </div>
@@ -183,17 +185,35 @@
                             <div class="tl-logo-real"><img src="assets/delhivery.png" alt="Delhivery" class="delhivery-img"></div>
                             <div>
                                 <h3>SDE I <span class="accent">@ Delhivery</span></h3>
-                                <p class="tl-meta">Jan 2022 — Mar 2024 &bull; Gurugram, India</p>
+                                <p class="tl-meta">Jun 2022 — Mar 2024 &bull; Gurugram, India</p>
                             </div>
                         </div>
                         <ul class="tl-list">
-                            <li>Built <strong>Flare</strong>, core last-mile allocation engine handling <strong>100k+ packages/day</strong> across 500+ centers.</li>
-                            <li>Built VRP layer with <strong>Uber H3</strong> spatial indexing for auto-dispatch territories, improving utilisation by 25%.</li>
-                            <li>Tuned <strong>PostGIS</strong> spatial indexes, cutting geographic lookup latency by 50%.</li>
-                            <li>Architected event-streaming gateway via <strong>Kafka</strong> + <strong>AWS Kinesis</strong> for real-time allocation updates.</li>
-                            <li>Built ETL pipelines in <strong>Databricks (PySpark)</strong> processing TB-scale GPS logs; deployed XGBoost models with 88% accuracy.</li>
+                            <li>Designed <strong>Flare</strong>, the core last-mile load-allocation engine using Django and Gurobi MILP, handling 100k+ packages daily across 500+ distribution centers.</li>
+                            <li>Built a VRP layer using affinity matrices and <strong>Uber H3</strong> spatial indexing, improving last-mile fleet utilisation by 25%.</li>
+                            <li>Developed a high-concurrency <strong>FastAPI</strong> microservice with a custom C++ module for spatial polygon computation.</li>
+                            <li>Architected a <strong>Java/Spring Boot</strong> event-streaming gateway for real-time allocation updates via <strong>Kafka</strong> and AWS Kinesis.</li>
                         </ul>
                         <div class="tl-tags"><span><i class="devicon-python-plain colored"></i> Python</span><span><i class="devicon-django-plain colored"></i> Django</span><span><i class="fas fa-bolt"></i> FastAPI</span><span><i class="devicon-python-plain colored"></i> Gurobi</span><span><i class="devicon-apachekafka-original colored"></i> Kafka</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS Kinesis</span></div>
+                    </div>
+                </div>
+                <!-- Delhivery Intern -->
+                <div class="tl-item anim-reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-head">
+                            <div class="tl-logo-real"><img src="assets/delhivery.png" alt="Delhivery" class="delhivery-img"></div>
+                            <div>
+                                <h3>Software Engineering Intern <span class="accent">@ Delhivery</span></h3>
+                                <p class="tl-meta">Jan 2022 — May 2022 &bull; Gurugram, India</p>
+                            </div>
+                        </div>
+                        <ul class="tl-list">
+                            <li>Tuned <strong>PostGIS</strong> spatial indexes and rewrote complex polygon-join queries, cutting geographic lookup latency by 50%.</li>
+                            <li>Delivered ETL pipelines in <strong>Databricks (PySpark)</strong> to process TB-scale GPS logs.</li>
+                            <li>Trained and deployed <strong>XGBoost</strong> models via MLflow for fleet capacity prediction with 88% accuracy.</li>
+                        </ul>
+                        <div class="tl-tags"><span><i class="devicon-python-plain colored"></i> Python</span><span><i class="devicon-postgresql-plain colored"></i> PostGIS</span><span><i class="devicon-apachespark-original colored"></i> PySpark</span><span><i class="fas fa-brain"></i> XGBoost</span></div>
                     </div>
                 </div>
             </div>
@@ -353,11 +373,7 @@
                     <h4>MongoDB Developer</h4>
                     <p>Certified MongoDB Developer Associate, skilled in advanced aggregation pipelines, indexing strategies, and document modeling.</p>
                 </div>
-                <div class="cert-card anim-reveal">
-                    <div class="cert-icon"><i class="fas fa-book-open"></i></div>
-                    <h4><a href="https://ieeexplore.ieee.org/document/9828947" target="_blank" style="color:inherit;">IEEE Publication</a></h4>
-                    <p>Co-authored and published <a href="https://ieeexplore.ieee.org/document/9828947" target="_blank" style="color:var(--accent);"><em>"Analysing the Effects of Varying Parameters in a MESFET"</em></a> in the highly respected IEEE academic journal.</p>
-                </div>
+
                 <div class="cert-card anim-reveal">
                     <div class="cert-card-icon"><i class="fas fa-code"></i></div>
                     <h4>Competitive Programming</h4>
