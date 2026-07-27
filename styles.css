@@ -371,206 +371,53 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 .pkg-code{font-family:var(--mono);font-size:0.9rem;line-height:1.7;color:var(--text2);display:block;}
 .pkg-key{color:#1CB37E;}
 .pkg-val{color:var(--accent2);}
-/* --- SKILLS LAYOUT --- */
-.skills-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-@media(max-width: 900px) {
-    .skills-layout { grid-template-columns: 1fr; }
-}
-
-/* --- ISOMETRIC 3D GRID --- */
-.iso-container {
-    perspective: 1200px;
-    width: 100%;
-    height: 450px;
+/* --- SKILLS: MAGNETIC GLASS WALL --- */
+.tech-grid {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+.tech-icon {
+    width: 85px;
+    height: 85px;
+    border-radius: 12px;
+    background: rgba(7, 20, 16, 0.5); /* deep emerald base */
+    border: 1px solid rgba(14, 110, 78, 0.3);
+    display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    color: var(--text2);
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s, background 0.3s;
+    /* We use JS for the magnetic transform, but add a fallback hover here */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
     position: relative;
     overflow: hidden;
 }
-.iso-grid {
-    width: 490px;
-    height: 490px;
-    transform: rotateX(60deg) rotateZ(-45deg);
-    transform-style: preserve-3d;
-    background-image: 
-        linear-gradient(var(--emerald) 1px, transparent 1px),
-        linear-gradient(90deg, var(--emerald) 1px, transparent 1px);
-    background-size: 70px 70px;
-    background-position: center center;
-    position: relative;
-    border: 1px solid var(--border);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-    opacity: 0.8;
-}
-.iso-grid::before {
+/* Shimmer effect inside the glass */
+.tech-icon::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    background: radial-gradient(circle at center, rgba(14,110,78,0.15), transparent 70%);
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(212,175,55,0.05), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
     pointer-events: none;
 }
-
-.iso-node {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    transform-style: preserve-3d;
-    transition: var(--fast);
+.tech-icon:hover::before {
+    opacity: 1;
+}
+.tech-icon:hover {
+    color: var(--accent);
+    background: rgba(14, 110, 78, 0.2);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(14, 110, 78, 0.4), inset 0 0 15px rgba(212, 175, 55, 0.2);
     z-index: 10;
-}
-.node-dot {
-    position: absolute;
-    left: 25px;
-    top: 25px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 15px var(--accent);
-    transform: translateZ(0);
-}
-
-.node-panel {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: rgba(7, 20, 16, 0.7);
-    border: 1px solid var(--emerald);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: var(--text);
-    /* Lie flat but float UP */
-    transform: translateZ(30px); 
-    box-shadow: inset 0 0 15px rgba(14,110,78,0.5);
-    backdrop-filter: blur(4px);
-    transition: var(--med);
-    transform-style: preserve-3d;
-    animation: floatPanel 4s ease-in-out infinite;
-}
-
-/* 3D thickness (right face) */
-.node-panel::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 20px;
-    height: 100%;
-    background: rgba(14,110,78,0.5);
-    transform-origin: left;
-    transform: rotateY(90deg);
-    border-right: 1px solid var(--emerald);
-    border-bottom: 1px solid var(--emerald);
-}
-
-/* 3D thickness (bottom face) */
-.node-panel::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: rgba(14,110,78,0.3);
-    transform-origin: top;
-    transform: rotateX(-90deg);
-    border-bottom: 1px solid var(--emerald);
-    border-left: 1px solid var(--emerald);
-}
-
-/* Hover effect */
-.iso-node:hover .node-panel {
-    background: rgba(14,110,78,0.3);
-    border-color: var(--accent);
-    transform: translateZ(50px) !important;
-}
-.iso-node:hover .node-panel::before,
-.iso-node:hover .node-panel::after {
-    border-color: var(--accent);
-}
-
-.node-panel i {
-    transform: translateZ(2px);
-    text-shadow: 0 0 10px rgba(255,255,255,0.1);
-}
-
-.iso-line {
-    position: absolute;
-    background: rgba(212,175,55,0.2);
-    transform: translateZ(1px); /* just above the grid floor */
-    overflow: hidden;
-}
-.iso-line::after {
-    content: '';
-    position: absolute;
-    background: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
-    animation: dataFlow 3s linear infinite;
-}
-
-/* Java (215, 75) to Spring (215, 355) */
-.line-1 { left: 245px; top: 105px; width: 1px; height: 250px; }
-.line-1::after { width: 100%; height: 30px; top: -30px; }
-
-/* Python (75, 215) to AWS (215, 215) */
-.line-2 { left: 105px; top: 245px; width: 110px; height: 1px; }
-.line-2::after { height: 100%; width: 30px; left: -30px; animation-name: dataFlowX; }
-
-/* AWS (215, 215) to Docker (355, 75) -> go up then right */
-/* Vertical up segment */
-.line-3 { left: 245px; top: 105px; width: 1px; height: 110px; }
-.line-3::after { width: 100%; height: 20px; top: -20px; animation-delay: 1s; }
-
-/* Horizontal right segment */
-.line-4 { left: 245px; top: 105px; width: 110px; height: 1px; }
-.line-4::after { height: 100%; width: 20px; left: -20px; animation-name: dataFlowX; animation-delay: 1.5s; }
-
-/* Postgres (75, 355) to Spring (215, 355) */
-.line-5 { left: 105px; top: 385px; width: 110px; height: 1px; }
-.line-5::after { height: 100%; width: 20px; left: -20px; animation-name: dataFlowX; animation-delay: 0.5s; }
-
-/* Kubernetes (355, 215) to Docker (355, 75) */
-.line-6 { left: 385px; top: 105px; width: 1px; height: 110px; }
-.line-6::after { width: 100%; height: 20px; top: -20px; animation-delay: 1.2s; }
-
-@keyframes dataFlow {
-    0% { top: -30px; opacity: 1; }
-    80% { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
-}
-@keyframes dataFlowX {
-    0% { left: -30px; opacity: 1; }
-    80% { opacity: 1; }
-    100% { left: 100%; opacity: 0; }
-}
-
-/* Individual node positions */
-.n-java { top: 75px; left: 215px; }
-.n-python { top: 215px; left: 75px; }
-.n-aws { top: 215px; left: 215px; }
-.n-docker { top: 75px; left: 355px; }
-.n-spring { top: 355px; left: 215px; }
-.n-postgres { top: 355px; left: 75px; }
-.n-kubernetes { top: 215px; left: 355px; }
-
-.n-python .node-panel { animation-delay: -1s; }
-.n-aws .node-panel { animation-delay: -2s; }
-.n-docker .node-panel { animation-delay: -0.5s; }
-.n-spring .node-panel { animation-delay: -1.5s; }
-.n-postgres .node-panel { animation-delay: -2.5s; }
-.n-kubernetes .node-panel { animation-delay: -0.8s; }
-
-@keyframes floatPanel {
-    0%, 100% { transform: translateZ(30px); }
-    50% { transform: translateZ(45px); }
 }
 /* --- ACHIEVEMENTS --- */
 .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1.1rem;}

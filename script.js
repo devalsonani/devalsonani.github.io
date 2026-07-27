@@ -80,10 +80,22 @@
     }
     animLoop();
 
-
-
-
-
+    // ---- MAGNETIC GLASS ICONS ----
+    document.querySelectorAll('.glass-icon').forEach(function(icon) {
+        icon.addEventListener('mousemove', function(e) {
+            var rect = icon.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            var cx = rect.width / 2;
+            var cy = rect.height / 2;
+            var dx = (x - cx) * 0.3;
+            var dy = (y - cy) * 0.3;
+            icon.style.transform = 'translate(' + dx + 'px, ' + dy + 'px) scale(1.1)';
+        });
+        icon.addEventListener('mouseleave', function() {
+            icon.style.transform = '';
+        });
+    });
     // ---- TERMINAL TYPING EFFECT ----
     var target = document.getElementById('typeTarget');
     if (target) {
