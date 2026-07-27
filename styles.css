@@ -88,21 +88,80 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.3)}70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 
-/* Centered Profile Photo & Floating Icons */
-.profile-container{position:relative;margin:3.5rem auto 1.5rem;width:280px;height:280px;}
-.profile-frame{position:relative;width:100%;height:100%;z-index:2;}
-.profile-img{width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%;position:relative;z-index:2;border:2px solid var(--border);transition:var(--med);}
-.profile-container:hover .profile-img { transform: scale(1.08); border-color: var(--accent); }
-.profile-glow{position:absolute;inset:-15px;border-radius:50%;background:var(--grad);opacity:.1;filter:blur(25px);z-index:0;animation:glowPulse 4s ease-in-out infinite;}
-@keyframes glowPulse{0%,100%{opacity:.08;transform:scale(1);}50%{opacity:.15;transform:scale(1.03);}}
-.profile-ring{position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(255,255,255,0.1);z-index:1;}
+/* ===== TECH HOLOGRAM ===== */
+.tech-hologram{position:relative;margin:2rem auto 1.5rem;width:300px;height:300px;}
 
-.floating-icon{position:absolute;font-size:1.5rem;color:var(--text2);background:var(--bg2);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);box-shadow:var(--shadow);z-index:3;animation:floatOrbit 6s ease-in-out infinite alternate;}
-.fi-1{top:-10px;left:-10px;animation-delay:0s;}
-.fi-2{bottom:10px;right:-15px;animation-delay:1.5s;}
-.fi-3{top:50%;left:-30px;animation-delay:3s;}
-.fi-4{top:20px;right:-20px;animation-delay:4.5s;}
-@keyframes floatOrbit{0%{transform:translateY(0px) scale(1);}50%{transform:translateY(-20px) scale(1.05);}100%{transform:translateY(0px) scale(1);}}
+/* Rotating rings */
+.holo-ring{position:absolute;border-radius:50%;border:1px solid transparent;animation-timing-function:linear;animation-iteration-count:infinite;}
+.holo-ring-1{inset:-10px;border-top-color:#06b6d4;border-bottom-color:#06b6d4;animation:holoSpin 8s linear infinite;opacity:0.6;}
+.holo-ring-2{inset:15px;border-left-color:#8b5cf6;border-right-color:#8b5cf6;animation:holoSpinReverse 12s linear infinite;opacity:0.5;}
+.holo-ring-3{inset:40px;border-top-color:#3b82f6;border-right-color:#3b82f6;animation:holoSpin 6s linear infinite;opacity:0.4;}
+@keyframes holoSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes holoSpinReverse{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
+
+/* Glowing core */
+.holo-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;z-index:5;}
+.holo-core-inner{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#06b6d4 0%,#8b5cf6 50%,transparent 70%);animation:corePulse 3s ease-in-out infinite;}
+.holo-core-pulse{position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,0.3) 0%,rgba(139,92,246,0.1) 40%,transparent 70%);animation:corePulseOuter 3s ease-in-out infinite 0.5s;}
+@keyframes corePulse{0%,100%{transform:scale(1);opacity:0.9;}50%{transform:scale(1.3);opacity:1;}}
+@keyframes corePulseOuter{0%,100%{transform:scale(1);opacity:0.4;}50%{transform:scale(1.6);opacity:0.1;}}
+
+/* SVG wireframe */
+.holo-wireframe{position:absolute;inset:30px;z-index:3;animation:wireframeSpin 20s linear infinite;filter:drop-shadow(0 0 6px rgba(6,182,212,0.5));}
+@keyframes wireframeSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* Scanning beam */
+.holo-scan{position:absolute;top:0;left:50%;transform:translateX(-50%);width:2px;height:100%;background:linear-gradient(180deg,transparent 0%,#06b6d4 30%,#8b5cf6 70%,transparent 100%);opacity:0.4;animation:scanBeam 4s ease-in-out infinite;z-index:4;}
+@keyframes scanBeam{0%,100%{transform:translateX(-50%) rotate(0deg);opacity:0.2;}50%{transform:translateX(-50%) rotate(180deg);opacity:0.6;}}
+
+/* Orbiting icons */
+.orbit{position:absolute;top:50%;left:50%;width:0;height:0;z-index:6;}
+.orbit-icon{position:absolute;width:38px;height:38px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 15px rgba(6,182,212,0.3);backdrop-filter:blur(5px);transition:transform 0.3s ease, box-shadow 0.3s ease;}
+.orbit-icon:hover{transform:scale(1.3) !important;box-shadow:0 0 25px rgba(6,182,212,0.6), 0 0 50px rgba(139,92,246,0.3);}
+
+.orbit-1{animation:orbitPath1 10s linear infinite;}
+.orbit-2{animation:orbitPath2 12s linear infinite;}
+.orbit-3{animation:orbitPath3 14s linear infinite;}
+.orbit-4{animation:orbitPath4 11s linear infinite;}
+.orbit-5{animation:orbitPath5 13s linear infinite;}
+.orbit-6{animation:orbitPath6 15s linear infinite;}
+
+.orbit-1 .orbit-icon{transform:translate(140px,-10px);}
+.orbit-2 .orbit-icon{transform:translate(-145px,15px);}
+.orbit-3 .orbit-icon{transform:translate(10px,-150px);}
+.orbit-4 .orbit-icon{transform:translate(-15px,145px);}
+.orbit-5 .orbit-icon{transform:translate(120px,100px);}
+.orbit-6 .orbit-icon{transform:translate(-120px,-100px);}
+
+@keyframes orbitPath1{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes orbitPath2{from{transform:rotate(60deg)}to{transform:rotate(420deg)}}
+@keyframes orbitPath3{from{transform:rotate(120deg)}to{transform:rotate(480deg)}}
+@keyframes orbitPath4{from{transform:rotate(180deg)}to{transform:rotate(540deg)}}
+@keyframes orbitPath5{from{transform:rotate(240deg)}to{transform:rotate(600deg)}}
+@keyframes orbitPath6{from{transform:rotate(300deg)}to{transform:rotate(660deg)}}
+
+/* Data-stream particles */
+.holo-particle{position:absolute;width:4px;height:4px;border-radius:50%;z-index:4;}
+.hp-1{background:#06b6d4;top:20%;left:10%;animation:particleFloat1 5s ease-in-out infinite;}
+.hp-2{background:#8b5cf6;top:70%;right:15%;animation:particleFloat2 6s ease-in-out infinite 1s;}
+.hp-3{background:#3b82f6;bottom:15%;left:25%;animation:particleFloat3 4.5s ease-in-out infinite 0.5s;}
+.hp-4{background:#06b6d4;top:35%;right:8%;animation:particleFloat1 7s ease-in-out infinite 2s;}
+.hp-5{background:#8b5cf6;bottom:30%;left:8%;animation:particleFloat2 5.5s ease-in-out infinite 1.5s;}
+.hp-6{background:#3b82f6;top:10%;right:30%;animation:particleFloat3 6.5s ease-in-out infinite 0.8s;}
+.hp-7{background:#06b6d4;bottom:10%;right:25%;animation:particleFloat1 4s ease-in-out infinite 3s;}
+.hp-8{background:#8b5cf6;top:50%;left:5%;animation:particleFloat2 5s ease-in-out infinite 2.5s;}
+
+@keyframes particleFloat1{0%,100%{transform:translate(0,0) scale(1);opacity:0.3;}25%{transform:translate(15px,-25px) scale(1.5);opacity:0.8;}50%{transform:translate(-10px,-40px) scale(1);opacity:0.5;}75%{transform:translate(20px,-15px) scale(1.3);opacity:0.7;}}
+@keyframes particleFloat2{0%,100%{transform:translate(0,0) scale(1);opacity:0.4;}25%{transform:translate(-20px,20px) scale(1.4);opacity:0.7;}50%{transform:translate(15px,35px) scale(0.8);opacity:0.9;}75%{transform:translate(-10px,10px) scale(1.2);opacity:0.5;}}
+@keyframes particleFloat3{0%,100%{transform:translate(0,0) scale(1.2);opacity:0.5;}33%{transform:translate(25px,-15px) scale(0.8);opacity:0.8;}66%{transform:translate(-15px,20px) scale(1.5);opacity:0.3;}}
+
+/* Hologram hover effect */
+.tech-hologram:hover .holo-ring-1{border-top-color:#8b5cf6;border-bottom-color:#3b82f6;opacity:0.9;}
+.tech-hologram:hover .holo-ring-2{border-left-color:#06b6d4;border-right-color:#3b82f6;opacity:0.8;}
+.tech-hologram:hover .holo-core-inner{transform:scale(1.5);filter:brightness(1.5);}
+.tech-hologram:hover .holo-wireframe{filter:drop-shadow(0 0 12px rgba(139,92,246,0.7));}
+.tech-hologram:hover .holo-scan{opacity:0.8;}
+
 
 .hero-greeting{font-family:var(--mono);font-size:1.2rem; line-height: 1.8;color:var(--text2);margin-bottom:-0.8rem;letter-spacing:1px;margin-top:1rem;}
 .hero-name{font-size:clamp(3rem,8vw,5.5rem);font-weight:900;line-height:1.1;margin-bottom:0;background:linear-gradient(270deg, #06b6d4, #8b5cf6, #3b82f6, #06b6d4);background-size: 300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation: gradientText 6s ease infinite;}
@@ -733,3 +792,34 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
     color: var(--text2);
     line-height: 1.55;
 }
+
+/* Hologram responsive */
+@media(max-width:768px){
+    .tech-hologram{width:220px;height:220px;margin:1.5rem auto 1rem;}
+    .orbit-icon{width:30px;height:30px;font-size:0.85rem;}
+    .orbit-1 .orbit-icon{transform:translate(105px,-8px);}
+    .orbit-2 .orbit-icon{transform:translate(-108px,10px);}
+    .orbit-3 .orbit-icon{transform:translate(8px,-112px);}
+    .orbit-4 .orbit-icon{transform:translate(-10px,108px);}
+    .orbit-5 .orbit-icon{transform:translate(90px,75px);}
+    .orbit-6 .orbit-icon{transform:translate(-90px,-75px);}
+    .holo-core{width:35px;height:35px;}
+}
+@media(max-width:480px){
+    .tech-hologram{width:180px;height:180px;}
+    .orbit-icon{width:26px;height:26px;font-size:0.75rem;}
+    .orbit-1 .orbit-icon{transform:translate(85px,-6px);}
+    .orbit-2 .orbit-icon{transform:translate(-88px,8px);}
+    .orbit-3 .orbit-icon{transform:translate(6px,-90px);}
+    .orbit-4 .orbit-icon{transform:translate(-8px,88px);}
+    .orbit-5 .orbit-icon{transform:translate(72px,60px);}
+    .orbit-6 .orbit-icon{transform:translate(-72px,-60px);}
+}
+
+/* Light mode hologram adjustments */
+[data-theme="light"] .orbit-icon{background:rgba(255,255,255,0.9);border-color:#E5E7EB;box-shadow:0 0 15px rgba(0,102,255,0.15);}
+[data-theme="light"] .orbit-icon:hover{box-shadow:0 0 25px rgba(0,102,255,0.3), 0 0 50px rgba(139,92,246,0.15);}
+[data-theme="light"] .holo-ring-1{border-top-color:#0066FF;border-bottom-color:#0066FF;}
+[data-theme="light"] .holo-ring-2{border-left-color:#7C3AED;border-right-color:#7C3AED;}
+[data-theme="light"] .holo-ring-3{border-top-color:#2563EB;border-right-color:#2563EB;}
+[data-theme="light"] .holo-scan{background:linear-gradient(180deg,transparent 0%,#0066FF 30%,#7C3AED 70%,transparent 100%);}

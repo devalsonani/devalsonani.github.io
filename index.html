@@ -16,7 +16,6 @@
     <meta property="og:description" content="Full Stack Developer specializing in distributed systems, scalable backends, and high-throughput architectures.">
     <meta property="og:url" content="https://devalsonani.github.io/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://devalsonani.github.io/profile.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -68,17 +67,70 @@
                     <span class="pulse-dot"></span> Open to Opportunities
                 </div>
                 
-                <div class="profile-container anim-reveal">
-                    <div class="profile-frame">
-                        <div class="profile-glow"></div>
-                        <img src="profile.jpg" alt="Deval Sonani" class="profile-img">
-                        <div class="profile-ring"></div>
+                <div class="tech-hologram anim-reveal">
+                    <!-- Outer rotating rings -->
+                    <div class="holo-ring holo-ring-1"></div>
+                    <div class="holo-ring holo-ring-2"></div>
+                    <div class="holo-ring holo-ring-3"></div>
+                    <!-- Glowing core -->
+                    <div class="holo-core">
+                        <div class="holo-core-inner"></div>
+                        <div class="holo-core-pulse"></div>
                     </div>
-                    <!-- Floating Tech Icons -->
-                    <div class="floating-icon fi-1"><i class="devicon-java-plain colored"></i></div>
-                    <div class="floating-icon fi-2"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div>
-                    <div class="floating-icon fi-3"><i class="devicon-python-plain colored"></i></div>
-                    <div class="floating-icon fi-4"><i class="fas fa-database"></i></div>
+                    <!-- Wireframe icosahedron via SVG -->
+                    <svg class="holo-wireframe" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="100,10 180,60 160,150 40,150 20,60" fill="none" stroke="url(#holoGrad)" stroke-width="0.8" opacity="0.6"/>
+                        <polygon points="100,190 180,140 160,50 40,50 20,140" fill="none" stroke="url(#holoGrad)" stroke-width="0.8" opacity="0.4"/>
+                        <line x1="100" y1="10" x2="100" y2="190" stroke="url(#holoGrad)" stroke-width="0.5" opacity="0.3"/>
+                        <line x1="20" y1="60" x2="180" y2="140" stroke="url(#holoGrad)" stroke-width="0.5" opacity="0.3"/>
+                        <line x1="180" y1="60" x2="20" y2="140" stroke="url(#holoGrad)" stroke-width="0.5" opacity="0.3"/>
+                        <line x1="40" y1="150" x2="160" y2="50" stroke="url(#holoGrad)" stroke-width="0.5" opacity="0.3"/>
+                        <line x1="160" y1="150" x2="40" y2="50" stroke="url(#holoGrad)" stroke-width="0.5" opacity="0.3"/>
+                        <!-- Circuit nodes -->
+                        <circle cx="100" cy="10" r="3" fill="#06b6d4" opacity="0.8"/>
+                        <circle cx="180" cy="60" r="3" fill="#8b5cf6" opacity="0.8"/>
+                        <circle cx="160" cy="150" r="3" fill="#3b82f6" opacity="0.8"/>
+                        <circle cx="40" cy="150" r="3" fill="#06b6d4" opacity="0.8"/>
+                        <circle cx="20" cy="60" r="3" fill="#8b5cf6" opacity="0.8"/>
+                        <circle cx="100" cy="190" r="3" fill="#3b82f6" opacity="0.8"/>
+                        <defs>
+                            <linearGradient id="holoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#06b6d4"/>
+                                <stop offset="50%" stop-color="#8b5cf6"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <!-- Scanning beam -->
+                    <div class="holo-scan"></div>
+                    <!-- Orbiting tech icons -->
+                    <div class="orbit orbit-1">
+                        <div class="orbit-icon"><i class="devicon-java-plain colored"></i></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="orbit-icon"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div>
+                    </div>
+                    <div class="orbit orbit-3">
+                        <div class="orbit-icon"><i class="devicon-python-plain colored"></i></div>
+                    </div>
+                    <div class="orbit orbit-4">
+                        <div class="orbit-icon"><i class="devicon-spring-plain colored"></i></div>
+                    </div>
+                    <div class="orbit orbit-5">
+                        <div class="orbit-icon"><i class="devicon-docker-plain colored"></i></div>
+                    </div>
+                    <div class="orbit orbit-6">
+                        <div class="orbit-icon"><i class="devicon-go-plain colored"></i></div>
+                    </div>
+                    <!-- Data streams / particles -->
+                    <div class="holo-particle hp-1"></div>
+                    <div class="holo-particle hp-2"></div>
+                    <div class="holo-particle hp-3"></div>
+                    <div class="holo-particle hp-4"></div>
+                    <div class="holo-particle hp-5"></div>
+                    <div class="holo-particle hp-6"></div>
+                    <div class="holo-particle hp-7"></div>
+                    <div class="holo-particle hp-8"></div>
                 </div>
 
                 <p class="hero-greeting anim-reveal">Hi, I'm</p>
