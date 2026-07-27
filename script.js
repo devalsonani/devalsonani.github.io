@@ -80,15 +80,24 @@
     }
     animLoop();
 
-    // ---- CURSOR GLOW ----
-    var glow = document.getElementById('cursorGlow');
+    // ---- CUSTOM CURSOR ----
+    const dot = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
     document.addEventListener('mousemove', function (e) {
         mx = e.clientX;
         my = e.clientY;
-        if (glow) {
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
+        if (dot) {
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
         }
+        if (ring) {
+            ring.style.left = e.clientX + 'px';
+            ring.style.top = e.clientY + 'px';
+        }
+    });
+    document.querySelectorAll('a, button, .project-card, .tech-icon, .ccard').forEach(el => {
+        el.addEventListener('mouseenter', () => { if(ring) ring.classList.add('hover'); });
+        el.addEventListener('mouseleave', () => { if(ring) ring.classList.remove('hover'); });
     });
 
     // ---- TYPING EFFECT ----
@@ -124,6 +133,55 @@
     }
     typeLoop();
 
+    // ---- TERMINAL TYPING EFFECT ----
+    var target = document.getElementById('typeTarget');
+    if (target) {
+        var script = [
+            {t:'const developer = {', cls:''},
+            {t:"  name: 'Deval Sonani',", cls:'key'},
+            {t:"  role: 'Full-Stack Developer',", cls:'key'},
+            {t:"  focus: 'backend, distributed systems',", cls:'key'},
+            {t:"  passions: ['AI', 'Scalability'],", cls:'key'},
+            {t:'};', cls:''},
+            {t:'', cls:''},
+            {t:'// Agentic Engineering incoming...', cls:'comment'},
+            {t:'deploy(developer);', cls:''}
+        ];
+        function typeLines(lines, el){
+            let li = 0;
+            function typeLine(){
+                if(li >= lines.length){
+                    el.insertAdjacentHTML('beforeend', '<span class="caret"></span>');
+                    return;
+                }
+                const {t, cls} = lines[li];
+                let ci = 0;
+                const lineEl = document.createElement('div');
+                lineEl.className = 'line';
+                if (cls) lineEl.classList.add(cls);
+                el.appendChild(lineEl);
+                function typeChar(){
+                    if(ci <= t.length){
+                        lineEl.textContent = t.slice(0, ci);
+                        ci++;
+                        setTimeout(typeChar, 14);
+                    } else {
+                        li++;
+                        setTimeout(typeLine, 90);
+                    }
+                }
+                typeChar();
+            }
+            typeLine();
+        }
+        var terminalObs = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) {
+                typeLines(script, target);
+                terminalObs.disconnect();
+            }
+        });
+        terminalObs.observe(target);
+    }
     // ---- SCROLL REVEALS ----
     var reveals = document.querySelectorAll('.anim-reveal');
     var revealObs = new IntersectionObserver(function (entries) {

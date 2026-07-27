@@ -25,12 +25,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="bg-grid"></div>
     <div id="scroll-progress"></div>
     <!-- Particle canvas background -->
     <canvas id="particles"></canvas>
 
-    <!-- Cursor glow -->
-    <div class="cursor-glow" id="cursorGlow"></div>
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
 
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
@@ -123,7 +125,10 @@
                     <h4>AI & Agentic Engineering</h4>
                     <p>Expertise in developing <strong>Agentic AI workflows</strong>, fine-tuning RAG pipelines, and rigorously <strong>evaluating ML models</strong> for production.</p>
                 </div>
-
+                <div class="bento-card glow-card bento-terminal anim-reveal">
+                    <div class="terminal-bar"><span></span><span></span><span></span><small>~/deval — zsh</small></div>
+                    <div class="terminal-body" id="typeTarget"></div>
+                </div>
             </div>
 
         </section>
@@ -132,7 +137,7 @@
         <section id="experience" class="section">
             <div class="section-header anim-reveal">
                 <span class="section-num">02.</span>
-                <h2>Experience</h2>
+                <h2>git log --experience</h2>
                 <div class="section-line"></div>
             </div>
             <div class="timeline">
@@ -144,7 +149,7 @@
                             <div class="tl-logo-real"><img src="assets/godaddy.png" alt="GoDaddy"></div>
                             <div>
                                 <h3>SDE II <span class="accent">@ GoDaddy</span></h3>
-                                <p class="tl-meta">Mar 2025 — Present &bull; Pune, India</p>
+                                <p class="tl-meta"><span class="hash"><strong>#a1c9e2</strong></span> &bull; Mar 2025 — Present &bull; Pune, India</p>
                             </div>
                         </div>
                         <ul class="tl-list">
@@ -167,7 +172,7 @@
                             <div class="tl-logo-real"><img src="assets/cars24.png" alt="Cars24"></div>
                             <div>
                                 <h3>SDE II <span class="accent">@ Cars24</span></h3>
-                                <p class="tl-meta">Mar 2024 — Mar 2025 &bull; Gurugram, India</p>
+                                <p class="tl-meta"><span class="hash"><strong>#7f31bd</strong></span> &bull; Mar 2024 — Mar 2025 &bull; Gurugram, India</p>
                             </div>
                         </div>
                         <ul class="tl-list">
@@ -188,7 +193,7 @@
                             <div class="tl-logo-real"><img src="assets/delhivery.png" alt="Delhivery" class="delhivery-img"></div>
                             <div>
                                 <h3>SDE I <span class="accent">@ Delhivery</span></h3>
-                                <p class="tl-meta">Jun 2022 — Mar 2024 &bull; Gurugram, India</p>
+                                <p class="tl-meta"><span class="hash"><strong>#4e08a0</strong></span> &bull; Jun 2022 — Mar 2024 &bull; Gurugram, India</p>
                             </div>
                         </div>
                         <ul class="tl-list">
@@ -209,7 +214,7 @@
                             <div class="tl-logo-real"><img src="assets/delhivery.png" alt="Delhivery" class="delhivery-img"></div>
                             <div>
                                 <h3>Software Engineering Intern <span class="accent">@ Delhivery</span></h3>
-                                <p class="tl-meta">Jan 2022 — May 2022 &bull; Gurugram, India</p>
+                                <p class="tl-meta"><span class="hash"><strong>#b2d9f1</strong></span> &bull; Jan 2022 — May 2022 &bull; Gurugram, India</p>
                             </div>
                         </div>
                         <ul class="tl-list">
@@ -232,10 +237,7 @@
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <div class="project-img-wrapper">
-                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800');"></div>
-                        <div class="project-img-overlay"></div>
-                    </div>
+
                     <div class="project-content">
                         <div class="project-top"><div class="project-icon"><i class="fas fa-rotate"></i></div><span class="project-tag">Featured</span></div>
                         <h3>Auto-Renewal System (ARS)</h3>
@@ -246,10 +248,7 @@
                 </div>
                 <!-- Project 2 -->
                 <div class="project-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <div class="project-img-wrapper">
-                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1566837945700-3005dea51259?auto=format&fit=crop&q=80&w=800');"></div>
-                        <div class="project-img-overlay"></div>
-                    </div>
+
                     <div class="project-content">
                         <div class="project-top"><div class="project-icon"><i class="fas fa-truck-fast"></i></div><span class="project-tag">Core</span></div>
                         <h3>Flare — Load Allocator</h3>
@@ -260,10 +259,7 @@
                 </div>
                 <!-- Project 3 -->
                 <div class="project-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <div class="project-img-wrapper">
-                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800');"></div>
-                        <div class="project-img-overlay"></div>
-                    </div>
+
                     <div class="project-content">
                         <div class="project-top"><div class="project-icon"><i class="fas fa-brain"></i></div><span class="project-tag">AI/ML</span></div>
                         <h3>NLP Declination Classifier</h3>
@@ -274,10 +270,7 @@
                 </div>
                 <!-- Project 4 -->
                 <div class="project-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <div class="project-img-wrapper">
-                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800');"></div>
-                        <div class="project-img-overlay"></div>
-                    </div>
+
                     <div class="project-content">
                         <div class="project-top"><div class="project-icon"><i class="fas fa-users-gear"></i></div><span class="project-tag">Platform</span></div>
                         <h3>Enterprise HRMS Platform</h3>
@@ -288,10 +281,7 @@
                 </div>
                 <!-- Project 5 -->
                 <div class="project-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <div class="project-img-wrapper">
-                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800');"></div>
-                        <div class="project-img-overlay"></div>
-                    </div>
+
                     <div class="project-content">
                         <div class="project-top"><div class="project-icon"><i class="fas fa-robot"></i></div><span class="project-tag">Hackathon</span></div>
                         <h3>RAG Logistics Agent</h3>
@@ -302,10 +292,7 @@
                 </div>
                 <!-- Project 6 -->
                 <div class="project-card anim-reveal" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <div class="project-img-wrapper">
-                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800');"></div>
-                        <div class="project-img-overlay"></div>
-                    </div>
+
                     <div class="project-content">
                         <div class="project-top"><div class="project-icon"><i class="fas fa-satellite-dish"></i></div><span class="project-tag">Streaming</span></div>
                         <h3>Real-Time Event Gateway</h3>
@@ -349,7 +336,7 @@
                         <div class="tech-icon" title="Kubernetes"><i class="devicon-kubernetes-plain colored"></i></div>
                         <div class="tech-icon" title="Helm"><i class="devicon-helm-original colored"></i></div>
                         <div class="tech-icon" title="GitHub Actions"><i class="devicon-githubactions-plain colored"></i></div>
-                        <div class="tech-icon" title="Databricks"><i class="devicon-databricks-plain colored"></i></div>
+                        <div class="tech-icon" title="Databricks"><i class="fas fa-cubes"></i></div>
                     </div>
                 </div>
                 <!-- Cluster 3: Databases & Streaming -->
@@ -452,6 +439,9 @@
                     <a href="tel:+919033633675" class="ccard glow-card" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.3"><i class="fas fa-phone"></i><span class="cl">Phone</span><span class="cv">+91-9033633675</span></a>
                     <a href="https://wa.me/919033633675" target="_blank" class="ccard glow-card" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.3"><i class="fab fa-whatsapp"></i><span class="cl">WhatsApp</span><span class="cv">Message Me</span></a>
                     <a href="https://www.linkedin.com/in/deval-sonani-290263196/" target="_blank" class="ccard glow-card" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.3"><i class="fab fa-linkedin"></i><span class="cl">LinkedIn</span><span class="cv">Connect with me</span></a>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="mailto:devalsonani333@gmail.com" class="cli-btn">$ send --message</a>
                 </div>
             </div>
         </section>
