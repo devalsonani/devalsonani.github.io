@@ -248,6 +248,22 @@
             });
         });
     }
+    // ---- THEME TOGGLE ----
+    var themeToggle = document.getElementById('themeToggle');
+    var currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light') { document.documentElement.setAttribute('data-theme', 'light'); }
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            var theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
 
 
     // ---- STAT NUMBER COUNTER ----
@@ -288,7 +304,7 @@
     // ---- PARALLAX HERO ELEMENTS ----
     window.addEventListener('scroll', function() {
         var scrollY = window.scrollY;
-        var hero = document.querySelector('.hero-centered');
+        var hero = document.querySelector('.hero-split');
         if (hero && scrollY < window.innerHeight) {
             hero.style.transform = 'translateY(' + scrollY * 0.15 + 'px)';
             hero.style.opacity = 1 - (scrollY / window.innerHeight) * 0.6;
@@ -312,6 +328,19 @@ window.addEventListener('mousemove', e => {
   document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
 });
 
+// Magnetic Tech Icons Effect
+document.querySelectorAll('.tech-icon').forEach(icon => {
+    icon.addEventListener('mousemove', e => {
+        const rect = icon.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        icon.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.1)`;
+    });
+    icon.addEventListener('mouseleave', () => {
+        icon.style.transform = 'translate(0px, 0px) scale(1)';
+    });
+});
+
 // Sober Toggle Logic
 function toggleExp(btn) {
     var wrapper = btn.previousElementSibling;
@@ -327,3 +356,4 @@ function toggleExp(btn) {
         text.innerText = 'View full impact';
     }
 }
+
