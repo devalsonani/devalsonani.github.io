@@ -386,15 +386,16 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 .iso-container {
     perspective: 1200px;
     width: 100%;
-    height: 400px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 .iso-grid {
-    width: 350px;
-    height: 350px;
+    width: 490px;
+    height: 490px;
     transform: rotateX(60deg) rotateZ(-45deg);
     transform-style: preserve-3d;
     background-image: 
@@ -432,9 +433,9 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
     border-radius: 50%;
     background: var(--accent);
     box-shadow: 0 0 15px var(--accent);
-    /* Make the dot flat on the floor */
     transform: translateZ(0);
 }
+
 .node-panel {
     position: absolute;
     width: 60px;
@@ -444,50 +445,61 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--text);
-    /* Counter-rotate to face the camera */
-    transform: rotateZ(45deg) rotateX(-60deg) translateZ(40px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+    /* Lie flat but float UP */
+    transform: translateZ(30px); 
+    box-shadow: inset 0 0 15px rgba(14,110,78,0.5);
     backdrop-filter: blur(4px);
     transition: var(--med);
+    transform-style: preserve-3d;
+    animation: floatPanel 4s ease-in-out infinite;
 }
-/* Side thickness */
+
+/* 3D thickness (right face) */
 .node-panel::before {
     content: '';
     position: absolute;
     top: 0;
-    right: -10px;
-    width: 10px;
+    left: 100%;
+    width: 20px;
     height: 100%;
-    background: rgba(14,110,78,0.4);
+    background: rgba(14,110,78,0.5);
     transform-origin: left;
-    transform: skewY(45deg);
+    transform: rotateY(90deg);
     border-right: 1px solid var(--emerald);
     border-bottom: 1px solid var(--emerald);
 }
-/* Bottom thickness */
+
+/* 3D thickness (bottom face) */
 .node-panel::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    top: 100%;
     left: 0;
     width: 100%;
-    height: 10px;
-    background: rgba(14,110,78,0.2);
+    height: 20px;
+    background: rgba(14,110,78,0.3);
     transform-origin: top;
-    transform: skewX(45deg);
+    transform: rotateX(-90deg);
     border-bottom: 1px solid var(--emerald);
     border-left: 1px solid var(--emerald);
 }
+
+/* Hover effect */
 .iso-node:hover .node-panel {
     background: rgba(14,110,78,0.3);
     border-color: var(--accent);
-    transform: rotateZ(45deg) rotateX(-60deg) translateZ(55px);
+    transform: translateZ(50px) !important;
 }
 .iso-node:hover .node-panel::before,
 .iso-node:hover .node-panel::after {
     border-color: var(--accent);
+}
+
+.node-panel i {
+    transform: translateZ(2px);
+    text-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
 .iso-line {
@@ -503,21 +515,31 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
     box-shadow: 0 0 10px var(--accent);
     animation: dataFlow 3s linear infinite;
 }
-/* Java to Spring (vertical) */
-.line-1 { left: 170px; top: 100px; width: 1px; height: 140px; }
+
+/* Java (215, 75) to Spring (215, 355) */
+.line-1 { left: 245px; top: 105px; width: 1px; height: 250px; }
 .line-1::after { width: 100%; height: 30px; top: -30px; }
 
-/* Python to AWS (horizontal) */
-.line-2 { left: 100px; top: 170px; width: 140px; height: 1px; }
+/* Python (75, 215) to AWS (215, 215) */
+.line-2 { left: 105px; top: 245px; width: 110px; height: 1px; }
 .line-2::after { height: 100%; width: 30px; left: -30px; animation-name: dataFlowX; }
 
-/* AWS to Docker (vertical segment) */
-.line-3 { left: 240px; top: 100px; width: 1px; height: 70px; }
+/* AWS (215, 215) to Docker (355, 75) -> go up then right */
+/* Vertical up segment */
+.line-3 { left: 245px; top: 105px; width: 1px; height: 110px; }
 .line-3::after { width: 100%; height: 20px; top: -20px; animation-delay: 1s; }
 
-/* AWS to Docker (horizontal segment) */
-.line-4 { left: 240px; top: 100px; width: 70px; height: 1px; }
+/* Horizontal right segment */
+.line-4 { left: 245px; top: 105px; width: 110px; height: 1px; }
 .line-4::after { height: 100%; width: 20px; left: -20px; animation-name: dataFlowX; animation-delay: 1.5s; }
+
+/* Postgres (75, 355) to Spring (215, 355) */
+.line-5 { left: 105px; top: 385px; width: 110px; height: 1px; }
+.line-5::after { height: 100%; width: 20px; left: -20px; animation-name: dataFlowX; animation-delay: 0.5s; }
+
+/* Kubernetes (355, 215) to Docker (355, 75) */
+.line-6 { left: 385px; top: 105px; width: 1px; height: 110px; }
+.line-6::after { width: 100%; height: 20px; top: -20px; animation-delay: 1.2s; }
 
 @keyframes dataFlow {
     0% { top: -30px; opacity: 1; }
@@ -530,16 +552,25 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
     100% { left: 100%; opacity: 0; }
 }
 
-/* Individual node positions (snapped to 70px grid) */
-.n-java { top: 70px; left: 140px; animation: floatNode 4s ease-in-out infinite; }
-.n-python { top: 140px; left: 70px; animation: floatNode 4.5s ease-in-out infinite 1s; }
-.n-aws { top: 140px; left: 210px; animation: floatNode 3.8s ease-in-out infinite 0.5s; }
-.n-docker { top: 70px; left: 280px; animation: floatNode 4.2s ease-in-out infinite 1.5s; }
-.n-spring { top: 210px; left: 140px; animation: floatNode 4.1s ease-in-out infinite 2s; }
+/* Individual node positions */
+.n-java { top: 75px; left: 215px; }
+.n-python { top: 215px; left: 75px; }
+.n-aws { top: 215px; left: 215px; }
+.n-docker { top: 75px; left: 355px; }
+.n-spring { top: 355px; left: 215px; }
+.n-postgres { top: 355px; left: 75px; }
+.n-kubernetes { top: 215px; left: 355px; }
 
-@keyframes floatNode {
-    0%, 100% { transform: translateZ(0px); }
-    50% { transform: translateZ(15px); }
+.n-python .node-panel { animation-delay: -1s; }
+.n-aws .node-panel { animation-delay: -2s; }
+.n-docker .node-panel { animation-delay: -0.5s; }
+.n-spring .node-panel { animation-delay: -1.5s; }
+.n-postgres .node-panel { animation-delay: -2.5s; }
+.n-kubernetes .node-panel { animation-delay: -0.8s; }
+
+@keyframes floatPanel {
+    0%, 100% { transform: translateZ(30px); }
+    50% { transform: translateZ(45px); }
 }
 /* --- ACHIEVEMENTS --- */
 .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1.1rem;}
