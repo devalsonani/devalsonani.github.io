@@ -80,58 +80,9 @@
     }
     animLoop();
 
-    // ---- CUSTOM CURSOR ----
-    const dot = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    document.addEventListener('mousemove', function (e) {
-        mx = e.clientX;
-        my = e.clientY;
-        if (dot) {
-            dot.style.left = e.clientX + 'px';
-            dot.style.top = e.clientY + 'px';
-        }
-        if (ring) {
-            ring.style.left = e.clientX + 'px';
-            ring.style.top = e.clientY + 'px';
-        }
-    });
-    document.querySelectorAll('a, button, .project-card, .tech-icon, .ccard').forEach(el => {
-        el.addEventListener('mouseenter', () => { if(ring) ring.classList.add('hover'); });
-        el.addEventListener('mouseleave', () => { if(ring) ring.classList.remove('hover'); });
-    });
 
-    // ---- TYPING EFFECT ----
-    var typedEl = document.getElementById('typedText');
-    var phrases = [
-        "distributed systems.",
-        "scalable architectures.",
-        "high-throughput APIs.",
-        "great user experiences.",
-        "clean code & best practices."
-    ];
-    var pi = 0, ci = 0, deleting = false;
 
-    function typeLoop() {
-        var cur = phrases[pi];
-        if (deleting) {
-            ci--;
-            typedEl.textContent = cur.substring(0, ci);
-        } else {
-            ci++;
-            typedEl.textContent = cur.substring(0, ci);
-        }
-        var speed = deleting ? 30 : 60;
-        if (!deleting && ci === cur.length) {
-            speed = 2000;
-            deleting = true;
-        } else if (deleting && ci === 0) {
-            deleting = false;
-            pi = (pi + 1) % phrases.length;
-            speed = 400;
-        }
-        setTimeout(typeLoop, speed);
-    }
-    typeLoop();
+
 
     // ---- TERMINAL TYPING EFFECT ----
     var target = document.getElementById('typeTarget');

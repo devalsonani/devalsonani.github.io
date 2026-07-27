@@ -30,21 +30,19 @@
     <!-- Particle canvas background -->
     <canvas id="particles"></canvas>
 
-    <!-- Custom Cursor -->
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
+
 
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo"><span class="logo-br">{</span>DS<span class="logo-br">}</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-                <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                <li><a href="#home" class="nav-link active" data-section="home">cd ~</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">cd about</a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">cd log</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">cd work</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">cd stack</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">cd contact</a></li>
                 <!-- Theme Toggle -->
                 <li>
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode">
@@ -71,9 +69,7 @@
                     
                     <h1 class="hero-name anim-reveal delay-2">Deval Sonani<span class="dot">.</span></h1>
                     
-                    <div class="hero-typed anim-reveal delay-3">
-                        <span class="typed-pre">I engineer </span><span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
-                    </div>
+
                     
                     <p class="hero-desc anim-reveal delay-4">
                         Full-Stack Developer focused on <strong>system architecture</strong>, <strong>operational excellence</strong>, 
@@ -87,13 +83,10 @@
                 </div>
 
                 <div class="hero-visual anim-reveal delay-3">
-                    <svg class="bespoke-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Abstract geometric shapes for the "classical elegance meets modern minimalism" vibe -->
-                        <circle cx="100" cy="100" r="90" fill="none" stroke="var(--accent)" stroke-width="1" class="svg-anim-1" stroke-dasharray="600" stroke-dashoffset="600" />
-                        <rect x="50" y="50" width="100" height="100" fill="none" stroke="var(--text)" stroke-width="2" class="svg-anim-2" stroke-dasharray="400" stroke-dashoffset="400" transform="rotate(45 100 100)" />
-                        <line x1="100" y1="10" x2="100" y2="190" stroke="var(--border2)" stroke-width="1" class="svg-anim-3" stroke-dasharray="200" stroke-dashoffset="200" />
-                        <line x1="10" y1="100" x2="190" y2="100" stroke="var(--border2)" stroke-width="1" class="svg-anim-4" stroke-dasharray="200" stroke-dashoffset="200" />
-                    </svg>
+                    <div class="bento-terminal glow-card">
+                        <div class="terminal-bar"><span></span><span></span><span></span><small>~/deval/config.json</small></div>
+                        <div class="terminal-body" id="typeTarget"></div>
+                    </div>
                 </div>
 
             </div>
@@ -125,10 +118,7 @@
                     <h4>AI & Agentic Engineering</h4>
                     <p>Expertise in developing <strong>Agentic AI workflows</strong>, fine-tuning RAG pipelines, and rigorously <strong>evaluating ML models</strong> for production.</p>
                 </div>
-                <div class="bento-card glow-card bento-terminal anim-reveal">
-                    <div class="terminal-bar"><span></span><span></span><span></span><small>~/deval — zsh</small></div>
-                    <div class="terminal-body" id="typeTarget"></div>
-                </div>
+
             </div>
 
         </section>
@@ -305,65 +295,70 @@
         </section>
 
         <!-- ========== SKILLS ========== -->
-                <section id="skills" class="section">
+        <section id="skills" class="section">
             <div class="section-header anim-reveal">
                 <span class="section-num">04.</span>
                 <h2>Technical Arsenal</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="skills-clusters">
-                <!-- Cluster 1: Backend & Languages -->
-                <div class="skill-cluster anim-reveal" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <h3 class="cluster-title">Backend & Languages</h3>
-                    <div class="cluster-grid">
-                        <div class="tech-icon" title="Java"><i class="devicon-java-plain colored"></i></div>
-                        <div class="tech-icon" title="Python"><i class="devicon-python-plain colored"></i></div>
-                        <div class="tech-icon" title="Go (Golang)"><i class="devicon-go-plain colored"></i></div>
-                        <div class="tech-icon" title="TypeScript"><i class="devicon-typescript-plain colored"></i></div>
-                        <div class="tech-icon" title="Spring Boot"><i class="devicon-spring-plain colored"></i></div>
-                        <div class="tech-icon" title="FastAPI"><i class="devicon-fastapi-plain colored"></i></div>
-                        <div class="tech-icon" title="Django"><i class="devicon-django-plain colored"></i></div>
-                        <div class="tech-icon" title="SQL"><i class="devicon-azuresqldatabase-plain colored"></i></div>
+            
+            <div class="skills-layout">
+                <div class="skills-left anim-reveal">
+                    <div class="pkg-card glow-card" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
+                        <pre><code class="pkg-code">
+{
+  <span class="pkg-key">"name"</span>: <span class="pkg-val">"deval-sonani"</span>,
+  <span class="pkg-key">"role"</span>: <span class="pkg-val">"Full-Stack Systems Engineer"</span>,
+  <span class="pkg-key">"dependencies"</span>: {
+    <span class="pkg-key">"java"</span>: <span class="pkg-val">"^21.0.0"</span>,
+    <span class="pkg-key">"python"</span>: <span class="pkg-val">"^3.11.0"</span>,
+    <span class="pkg-key">"go"</span>: <span class="pkg-val">"^1.22.0"</span>,
+    <span class="pkg-key">"typescript"</span>: <span class="pkg-val">"^5.0.0"</span>
+  },
+  <span class="pkg-key">"infrastructure"</span>: {
+    <span class="pkg-key">"aws"</span>: <span class="pkg-val">"latest"</span>,
+    <span class="pkg-key">"docker"</span>: <span class="pkg-val">"latest"</span>,
+    <span class="pkg-key">"kubernetes"</span>: <span class="pkg-val">"latest"</span>
+  },
+  <span class="pkg-key">"data"</span>: {
+    <span class="pkg-key">"postgresql"</span>: <span class="pkg-val">"^16.0.0"</span>,
+    <span class="pkg-key">"kafka"</span>: <span class="pkg-val">"latest"</span>,
+    <span class="pkg-key">"redis"</span>: <span class="pkg-val">"latest"</span>
+  }
+}
+                        </code></pre>
                     </div>
                 </div>
-                <!-- Cluster 2: Cloud & DevOps -->
-                <div class="skill-cluster anim-reveal" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <h3 class="cluster-title">Cloud & DevOps</h3>
-                    <div class="cluster-grid">
-                        <div class="tech-icon" title="AWS"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div>
-                        <div class="tech-icon" title="GCP"><i class="devicon-googlecloud-plain colored"></i></div>
-                        <div class="tech-icon" title="Docker"><i class="devicon-docker-plain colored"></i></div>
-                        <div class="tech-icon" title="Kubernetes"><i class="devicon-kubernetes-plain colored"></i></div>
-                        <div class="tech-icon" title="Helm"><i class="devicon-helm-original colored"></i></div>
-                        <div class="tech-icon" title="GitHub Actions"><i class="devicon-githubactions-plain colored"></i></div>
-                        <div class="tech-icon" title="Databricks"><i class="fas fa-cubes"></i></div>
-                    </div>
-                </div>
-                <!-- Cluster 3: Databases & Streaming -->
-                <div class="skill-cluster anim-reveal" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <h3 class="cluster-title">Databases & Streaming</h3>
-                    <div class="cluster-grid">
-                        <div class="tech-icon" title="PostgreSQL"><i class="devicon-postgresql-plain colored"></i></div>
-                        <div class="tech-icon" title="MongoDB"><i class="devicon-mongodb-plain colored"></i></div>
-                        <div class="tech-icon" title="DynamoDB"><i class="fas fa-database"></i></div>
-                        <div class="tech-icon" title="Couchbase"><i class="devicon-couchbase-plain colored"></i></div>
-                        <div class="tech-icon" title="Redis"><i class="devicon-redis-plain colored"></i></div>
-                        <div class="tech-icon" title="Elasticsearch"><i class="devicon-elasticsearch-plain colored"></i></div>
-                        <div class="tech-icon" title="Apache Kafka"><i class="devicon-apachekafka-original colored"></i></div>
-                    </div>
-                </div>
-                <!-- Cluster 4: Frontend & AI/ML -->
-                <div class="skill-cluster anim-reveal" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                    <h3 class="cluster-title">Frontend & AI/ML</h3>
-                    <div class="cluster-grid">
-                        <div class="tech-icon" title="React"><i class="devicon-react-original colored"></i></div>
-                        <div class="tech-icon" title="Next.js"><i class="devicon-nextjs-plain"></i></div>
-                        <div class="tech-icon" title="Tailwind CSS"><i class="devicon-tailwindcss-original colored"></i></div>
-                        <div class="tech-icon" title="Redux"><i class="devicon-redux-original colored"></i></div>
-                        <div class="tech-icon" title="PySpark"><i class="devicon-apachespark-original colored"></i></div>
-                        <div class="tech-icon" title="Scikit-Learn"><i class="devicon-scikitlearn-plain colored"></i></div>
-                        <div class="tech-icon" title="ChromaDB"><i class="fas fa-database"></i></div>
-                        <div class="tech-icon" title="LLMs & RAG"><i class="fas fa-robot"></i></div>
+
+                <div class="skills-right anim-reveal delay-3">
+                    <div class="iso-container">
+                        <div class="iso-grid">
+                            <div class="iso-line line-1"></div>
+                            <div class="iso-line line-2"></div>
+                            <div class="iso-line line-3"></div>
+                            <div class="iso-line line-4"></div>
+
+                            <div class="iso-node n-java">
+                                <div class="node-dot"></div>
+                                <div class="node-panel"><i class="devicon-java-plain colored"></i></div>
+                            </div>
+                            <div class="iso-node n-python">
+                                <div class="node-dot"></div>
+                                <div class="node-panel"><i class="devicon-python-plain colored"></i></div>
+                            </div>
+                            <div class="iso-node n-aws">
+                                <div class="node-dot"></div>
+                                <div class="node-panel"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div>
+                            </div>
+                            <div class="iso-node n-docker">
+                                <div class="node-dot"></div>
+                                <div class="node-panel"><i class="devicon-docker-plain colored"></i></div>
+                            </div>
+                            <div class="iso-node n-spring">
+                                <div class="node-dot"></div>
+                                <div class="node-panel"><i class="devicon-spring-plain colored"></i></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -433,7 +428,7 @@
             </div>
             <div class="contact-box anim-reveal">
                 <h3>Let's Build Something Great Together</h3>
-                <p>Currently open to new opportunities in distributed systems and backend engineering. My inbox is always open.</p>
+
                 <div class="contact-grid">
                     <a href="mailto:devalsonani333@gmail.com" class="ccard glow-card" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.3"><i class="fas fa-envelope"></i><span class="cl">Email</span><span class="cv">devalsonani333@gmail.com</span></a>
                     <a href="tel:+919033633675" class="ccard glow-card" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.3"><i class="fas fa-phone"></i><span class="cl">Phone</span><span class="cv">+91-9033633675</span></a>
