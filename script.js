@@ -36,7 +36,9 @@
     Particle.prototype.draw = function () {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.sz, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,255,255,' + this.op + ')';
+        var colors = ['6,182,212','139,92,246','59,130,246','255,255,255'];
+        var c = colors[Math.floor(this.x * 4 / canvas.width) % 4];
+        ctx.fillStyle = 'rgba(' + c + ',' + this.op + ')';
         ctx.fill();
     };
 
@@ -268,6 +270,51 @@
             }
         });
     }
+
+    // ---- STAT NUMBER COUNTER ----
+    var statNums = document.querySelectorAll('.stat-number');
+    var statObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+            if (e.isIntersecting) {
+                var el = e.target;
+                var target = parseInt(el.getAttribute('data-target'));
+                var start = performance.now();
+                var dur = 2200;
+                function tick(now) {
+                    var p = Math.min((now - start) / dur, 1);
+                    var ease = 1 - Math.pow(1 - p, 4);
+                    el.textContent = Math.floor(ease * target);
+                    if (p < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+                statObs.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    statNums.forEach(function(el) { statObs.observe(el); });
+
+    // ---- MAGNETIC BUTTON EFFECT ----
+    document.querySelectorAll('.btn').forEach(function(btn) {
+        btn.addEventListener('mousemove', function(e) {
+            var rect = btn.getBoundingClientRect();
+            var x = e.clientX - rect.left - rect.width / 2;
+            var y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = 'translate(' + x * 0.15 + 'px,' + y * 0.15 + 'px)';
+        });
+        btn.addEventListener('mouseleave', function() {
+            btn.style.transform = '';
+        });
+    });
+
+    // ---- PARALLAX HERO ELEMENTS ----
+    window.addEventListener('scroll', function() {
+        var scrollY = window.scrollY;
+        var hero = document.querySelector('.hero-centered');
+        if (hero && scrollY < window.innerHeight) {
+            hero.style.transform = 'translateY(' + scrollY * 0.15 + 'px)';
+            hero.style.opacity = 1 - (scrollY / window.innerHeight) * 0.6;
+        }
+    });
 
 })();
 
