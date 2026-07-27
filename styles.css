@@ -215,7 +215,7 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 .hl-img:hover{opacity:1;transform:scale(1.1);box-shadow:0 4px 15px rgba(59,130,246,0.4);}
 
 /* Scroll indicator - Extraordinary animated chevrons */
-.scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.3rem;z-index:5;}
+.scroll-indicator{position:relative;margin:2rem auto 0;display:flex;flex-direction:column;align-items:center;gap:0.3rem;z-index:5;}
 .scroll-indicator span{font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-bottom:0.5rem;}
 .scroll-chevrons{display:flex;flex-direction:column;align-items:center;gap:0;}
 .scroll-chevrons i{font-size:1rem;color:var(--accent);opacity:0;animation:chevronCascade 2s ease-in-out infinite;}
@@ -225,9 +225,6 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 @keyframes chevronCascade{0%{opacity:0;transform:translateY(-8px);}50%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(8px);}}
 .scroll-indicator:hover i{color:#8b5cf6;}
 .scroll-indicator:hover span{color:var(--text2);}
-@media(max-height: 850px) {
-    .scroll-indicator { display: none; }
-}
 
 
 /* --- ABOUT --- */
