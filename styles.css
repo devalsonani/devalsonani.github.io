@@ -82,9 +82,9 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 .section-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
 
 /* --- HERO --- */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:100px;position:relative;}
-.hero-centered{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;max-width:800px;margin:0 auto;z-index:2;position:relative;}
-.hero-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.35rem 1rem .35rem .6rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:24px;font-size:.82rem;color:var(--text2);font-weight:500;margin-bottom:0.5rem;}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:100px;padding-bottom:100px;position:relative;}
+.hero-centered{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;max-width:800px;margin:0 auto;z-index:2;position:relative;width:100%;}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.35rem 1rem .35rem .6rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:24px;font-size:.82rem;color:var(--text2);font-weight:500;margin-bottom:0.5rem;z-index:30;}
 .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.3)}70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 
@@ -118,7 +118,7 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 /* Orbiting Tech Planets */
 .planet-orbit{position:absolute;top:50%;left:50%;width:100%;height:100%;transform-style:preserve-3d;z-index:15;}
 .planet-container{position:absolute;top:0;left:0;width:100%;height:100%;transform-style:preserve-3d;}
-.planet-body{position:absolute;width:34px;height:34px;background:rgba(10,10,10,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;backdrop-filter:blur(4px);box-shadow:inset 0 0 10px rgba(255,255,255,0.1),0 0 15px rgba(6,182,212,0.3);transition:transform 0.3s ease,box-shadow 0.3s ease;}
+.planet-body{position:absolute;top:50%;left:50%;margin-top:-17px;margin-left:-17px;width:34px;height:34px;background:rgba(10,10,10,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;backdrop-filter:blur(4px);box-shadow:inset 0 0 10px rgba(255,255,255,0.1),0 0 15px rgba(6,182,212,0.3);transition:transform 0.3s ease,box-shadow 0.3s ease;}
 .planet-body::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;bottom:-1px;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,0.4) 0%,transparent 50%);z-index:-1;}
 .planet-body:hover{transform:scale(1.4) !important;box-shadow:inset 0 0 15px rgba(255,255,255,0.3),0 0 30px rgba(6,182,212,0.8),0 0 50px rgba(139,92,246,0.5);border-color:rgba(6,182,212,0.8);z-index:20;}
 
@@ -225,6 +225,10 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem;}
 @keyframes chevronCascade{0%{opacity:0;transform:translateY(-8px);}50%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(8px);}}
 .scroll-indicator:hover i{color:#8b5cf6;}
 .scroll-indicator:hover span{color:var(--text2);}
+@media(max-height: 850px) {
+    .scroll-indicator { display: none; }
+}
+
 
 /* --- ABOUT --- */
 /* --- BENTO GRID ABOUT --- */
