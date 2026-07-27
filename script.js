@@ -36,7 +36,7 @@
     Particle.prototype.draw = function () {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.sz, 0, Math.PI * 2);
-        var colors = ['6,182,212','139,92,246','59,130,246','255,255,255'];
+        var colors = ['212,175,55','229,193,88','250,250,250','255,255,255'];
         var c = colors[Math.floor(this.x * 4 / canvas.width) % 4];
         ctx.fillStyle = 'rgba(' + c + ',' + this.op + ')';
         ctx.fill();
@@ -249,27 +249,6 @@
         });
     }
 
-
-    // ---- THEME TOGGLE ----
-    var themeToggle = document.getElementById('themeToggle');
-    var currentTheme = localStorage.getItem('theme') || 'dark';
-
-    if (currentTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            var theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'light') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    }
 
     // ---- STAT NUMBER COUNTER ----
     var statNums = document.querySelectorAll('.stat-number');
