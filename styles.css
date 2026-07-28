@@ -738,6 +738,61 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font
     background: #FAFAFA;
 }
 
+/* --- EXTRAORDINARY MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    main { padding: 0 1.5rem; }
+    .section { padding: 3rem 0 2rem; }
+    
+    .tech-icon { width: 75px; height: 75px; font-size: 2.5rem; }
+    
+    .hero { padding-top: 80px; padding-bottom: 60px; min-height: 80vh; }
+    .hero-split { gap: 1.5rem; }
+    .hero-text-content { align-items: center; text-align: center; }
+    .hero-greeting { margin-top: 0; }
+}
+
+@media (max-width: 768px) {
+    main { padding: 0 1.2rem; }
+    .section-header h2 { font-size: 2rem; }
+    
+    /* Skills Grid Mobile */
+    .tech-grid { gap: 0.8rem; }
+    .tech-icon { width: 60px; height: 60px; font-size: 2rem; border-radius: 10px; }
+    
+    /* Project Cards Mobile */
+    .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .project-card { padding: 1.5rem; }
+    .project-header h3 { font-size: 1.3rem; }
+    
+    /* Experience Timeline Mobile */
+    .timeline::before { left: 14px; }
+    .tl-item { padding-left: 2rem; margin-bottom: 2rem; }
+    .tl-icon { width: 30px; height: 30px; left: 0; }
+    .tl-icon i { font-size: 0.8rem; }
+    
+    /* Contact Section Mobile */
+    .contact-content { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-form { padding: 1.5rem; }
+    
+    /* Certifications Mobile */
+    .cert-grid { grid-template-columns: 1fr; }
+    .cert-card { max-width: 100%; padding: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+    main { padding: 0 1rem; }
+    .hero-name { font-size: 2.8rem; }
+    .hero-typed { font-size: 1.1rem; }
+    .btn { padding: 0.7rem 1.5rem; font-size: 0.8rem; }
+    
+    .tech-grid { gap: 0.6rem; }
+    .tech-icon { width: 50px; height: 50px; font-size: 1.6rem; border-radius: 8px; }
+    
+    .tl-content { padding: 1.2rem; }
+    .tl-content h3 { font-size: 1.1rem; }
+    .tl-content h4 { font-size: 0.9rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
